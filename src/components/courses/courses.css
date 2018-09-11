@@ -1,0 +1,21 @@
+.viewer{
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+
+.course-menu{
+    flex: 1;
+    /*  */
+    overflow: scroll;
+    max-height: 100vh;
+    min-width: 200px;
+}
+
+.course-menu::-webkit-scrollbar{
+    display: none;
+}
+
+.course-video{
+    flex:3;
+    min-width: 400px;
+}

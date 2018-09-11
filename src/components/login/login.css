@@ -1,0 +1,93 @@
+.cover{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../assets/cover.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+}
+.opacity{
+    width: 100%;
+    height:100%;
+    position: absolute;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.perspective{
+    transition: all .3s ease;
+    text-align: center;
+}
+
+.perspective:hover{
+    transform: perspective(400px) rotateY(-25deg);
+}
+
+.cover h2{
+    font-size: 300%;
+    color: white;
+    margin-bottom: 0;
+}
+
+h3, h4{
+    color: aliceblue;
+}
+b{
+    color:lightskyblue;
+}
+
+.profile{
+    /* background-image: url('https://gallery.yopriceville.com/var/albums/Backgrounds/Winter_Snow_Texture_Background.jpg?m=1475398908'); */
+    background-position: center;
+    background-size: cover;
+    /* height: 70vh; */
+    /* width: 100vw; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.lista-cursos{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-profile{
+    display: flex;
+    padding-top: 50px;
+    margin: 0 auto;
+    width: 80%;
+    /* flex-wrap: wrap; */
+}
+
+.enrolled{
+    /* margin-left: 100px; */
+    width: 100%;
+}
+
+.list{
+    /* background: red; */
+    display: flex;
+    justify-content: stretch;
+}
+
+@media(max-width:600px){
+    .flex-profile{
+        flex-direction: column;
+        width: 100vw;
+    }
+    .profile{
+        justify-content: center;
+        display: flex;
+    }
+    .list{
+        flex-direction: column;
+        padding-right: 20px;
+    }
+}
