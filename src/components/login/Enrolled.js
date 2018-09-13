@@ -14,7 +14,7 @@ class Enrolled extends Component{
                 {user.validated ? 
                 <div className="list">
                     <CourseCard/>
-                    <CourseCard/>
+                    {/* <CourseCard/> */}
                 </div>
                 :
                     <div>

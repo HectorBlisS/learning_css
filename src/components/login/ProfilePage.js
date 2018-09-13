@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import ProfileDisplay from './ProfileDisplay';
 import Enrolled from './Enrolled'
 import {updateUser} from '../../services/firebase'
+import swal from 'sweetalert';
 
 
 class ProfilePage extends Component{
@@ -32,19 +33,19 @@ class ProfilePage extends Component{
         let validated = true
         const errors = {}
         const {user} = this.state
-        if(user.firstName.length < 2){
+        if(!user.firstName || user.firstName.length < 2){
             validated = false
             errors.firstName = "Completa tus nombres"
         }
-        if(user.lastName.length < 2){
+        if(!user.lastName || user.lastName.length < 2){
             validated = false
             errors.lastName = "Completa tus apellidos"
         }
-        if(user.email.length < 5 || !user.email.includes('@')){
+        if(!user.email || user.email.length < 5 || !user.email.includes('@')){
             validated = false
             errors.email = "Escribe un email valido"
         }
-        if(user.phoneNumber.length < 10 ){
+        if(!user.phoneNumber || user.phoneNumber.length < 10 ){
             validated = false
             errors.phoneNumber = "Tu teléfono debe tener 10 digitos"
         }
@@ -64,6 +65,7 @@ class ProfilePage extends Component{
         updateUser(user)
         .then(user=>{
             this.setState({loading:false, visible:false, respaldo:{...this.state.user}})
+            swal("¡Maravilloso!", "Ahora puedes disfrutar del curso ¡gratis!", "success");
         })
         .catch(e=>console.log(e))
       }

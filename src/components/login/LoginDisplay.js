@@ -4,7 +4,7 @@ import {Button} from 'antd';
 const logo = "https://s3.amazonaws.com/owler-image/logo/ironhack_owler_20180828_221413_original.png"
 
 
-const LoginDisplay = ({onClick}) => {
+const LoginDisplay = ({googleLogin, facebookLogin}) => {
     return (
         <div className="cover">
         <div className="opacity">
@@ -18,7 +18,9 @@ const LoginDisplay = ({onClick}) => {
           <hr style={{width:'80%'}} />  
           <br/>
           <h3>¡Aprende hoy mismo!</h3>
-          <Button onClick={onClick} type="primary" icon="facebook">Facebook Login</Button>
+          <Button onClick={facebookLogin} type="primary" icon="facebook">Facebook Login</Button>
+          <hr />
+          <Button onClick={googleLogin} type="danger" icon="google">Gmail Login</Button>
         </div> 
       </div>
     )
