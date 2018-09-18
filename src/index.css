@@ -1,12 +1,27 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
 @import './components/login/login.css';
 @import './components/courses/courses.css';
+@import './components/home/styles.css';
 
+@font-face {
+  font-family: 'Gotham regular';
+  src: url('./assets/GOTHAM HTF/GothamHTF-Book.otf');
+}
 
+@font-face {
+  font-family: 'Gotham titles';
+  src: url('./assets/GOTHAM HTF/GothamHTF-Bold.otf');
+}
+
+@font-face {
+  font-family: 'Gotham subtitles';
+  src: url('./assets/GOTHAM HTF/GothamHTF-Medium.otf');
+}
+
+* {
+  font-family: 'Gotham regular';
+}
 
 body {
-  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
 }

@@ -1,0 +1,117 @@
+.container {
+    text-align: center;
+}
+
+.inside-styles-90 {
+    width: 90vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.inside-styles-50 {
+    width: 50vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+h1 {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: "Gotham titles";
+}
+
+h2 {
+    color: white;
+    font-family: "Gotham subtitles";
+}
+
+h3 {
+    color: #2DC5FA;
+    font-family: "Gotham titles";
+    font-size: 1.5rem;
+}
+
+h4 {
+    color: black;
+    font-family: "Gotham subtitles";
+    font-size: 1.3rem;
+}
+
+span {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.header {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    height: 8%;
+    width: 100vw;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header > * {
+    margin: 120px;
+}
+
+/*ANT DESIGN BUTTON*/
+.ant-btn-primary{
+    background-color: #2DC5FA !important;
+    border-color: #2DC5FA !important;
+}
+
+.footer {
+    text-align: left !important;
+    padding:2% 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    background-color: #2DC5FA;
+    flex-wrap: wrap;
+    color: #2D354C;
+}
+
+.footer > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 25%;
+    text-align: center;
+}
+
+.footer div div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.footer div:nth-child(1) div {
+    margin-top: 20px;
+    flex-direction: row;
+}
+
+.footer a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.icon {
+    font-size: 1.5rem;
+}
+
+.footer a:hover {
+    text-decoration: none;
+    color: #2D354C;
+    cursor: pointer;
+}
