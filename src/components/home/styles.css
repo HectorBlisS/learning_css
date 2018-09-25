@@ -51,23 +51,37 @@ span {
     position: fixed;
     z-index: 1;
     top: 0;
-    height: 8%;
+    height: 10%;
     width: 100vw;
     background: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    box-shadow: 5px 5px 5px #888888;
 }
 
-.header > * {
+.header Button {
     margin: 120px;
 }
 
-/*ANT DESIGN BUTTON*/
-.ant-btn-primary{
+.logoanchor > img {
+    margin: 120px;
+    width: 70px;
+}
+
+.logoanchor {
+    width: 1px;
+}
+/*ANT DESIGN */
+.ant-btn-primary {
     background-color: #2DC5FA !important;
     border-color: #2DC5FA !important;
 }
+
+.ant-modal-close-x {
+    color: #2DC5FA !important;
+}
+/*ANT DESIGN*/
 
 .footer {
     text-align: left !important;
@@ -113,5 +127,19 @@ span {
 .footer a:hover {
     text-decoration: none;
     color: #2D354C;
+    cursor: pointer;
+}
+
+.login-modal-fb, .login-modal-go {
+    font-size: 2rem;
+}
+
+.login-modal-fb:hover {
+    color: #3B5998;
+    cursor: pointer;
+}
+
+.login-modal-go:hover {
+    color: #EA4335;
     cursor: pointer;
 }

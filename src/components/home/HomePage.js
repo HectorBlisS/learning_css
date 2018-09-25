@@ -3,15 +3,49 @@ import { Parallax } from "react-parallax";
 import { Button, Icon } from 'antd';
 import layer from '../../assets/Screen Shot 2018-09-18 at 16.53.00.png';
 import white from '../../assets/finalfinal.jpg';
+import {LoginModal} from "./Modal";
+import {facebookLogin, googleLogin} from "../../services/firebase";
 
 class HomePage extends Component {
+
+  state = {
+    visible: false
+  };
+
+  handleCancel = () => {
+    this.setState({visible:false})
+  };
+
+  handleShow = () => {
+    this.setState({visible:true})
+  };
+
+  loginWithFacebook = () => {
+    facebookLogin()
+      .then(()=>{
+        this.props.history.push('/profile')
+      })
+      .catch(e=>console.log(e))
+  };
+
+  loginWithGoogle = () => {
+    googleLogin()
+      .then(()=>{
+        this.props.history.push('/profile')
+      })
+      .catch(e=>console.log(e))
+  };
+
   render(){
+    const {visible} = this.state;
     return(
       <div className='container'>
 
         <div className='header'>
-          <img src='https://cdn-images-1.medium.com/max/1200/1*69RcxrWXuk385lSxkIYYLA.png' alt='banner' width='4%'/>
-          <Button onClick={() => this.props.history.push('/')} size='large' type='primary'>Comenzar ahora</Button>
+          <a className='logoanchor' href='https://www.ironhack.com/es' target="_blank" rel="noopener noreferrer" >
+            <img src='https://cdn-images-1.medium.com/max/1200/1*69RcxrWXuk385lSxkIYYLA.png' alt='banner' />
+          </a>
+          <Button onClick={this.handleShow} size='large' type='primary'>Comenzar ahora</Button>
         </div>
 
         <Parallax bgImage={layer} blur={{ min: -1, max: 5 }} strength={500}>
@@ -23,11 +57,11 @@ class HomePage extends Component {
               <div style={{ marginTop: '50px', display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}>
                 <span>25 VIDEOS</span>
                 <span>2 HORAS</span>
-                <span>1 EXAMEN</span>
-                <span>ACOMPAÑAMIENTO POR UN EXPERTO</span>
-                <span>100% ONLINE - GRATUITO</span>
+                <span>1 EXAMEN FINAL</span>
+                <span>100% ONLINE</span>
+                <span>GRATUITO</span>
               </div>
-              <Button onClick={() => this.props.history.push('/')} style={{marginTop: '70px', height: 50}} size='large' type='primary'>Comenzar ahora</Button>
+              <Button onClick={this.handleShow} style={{marginTop: '70px', height: 50}} size='large' type='primary'>Comenzar ahora</Button>
             </div>
           </div>
         </Parallax>
@@ -65,11 +99,22 @@ class HomePage extends Component {
         </Parallax>
 
         <Parallax bgImage={white} strength={-200}>
+          <div style={{ width: '90vw', height: '85vh' }}>
+            <div className='inside-styles-50'>
+              <h3>El Instructor</h3>
+              <img src={require('../../assets/blissito.png')} alt="Bliss" style={{width: "40%", borderRadius: "50%", margin: 50}}/>
+              <h4>Héctor Bliss</h4>
+              <p>Soy de la generación que jugó con Atari, aprendió comandos MSDOS en windows 95, vió jugar a Michael Jordan y ahora usa una Mac para programar con Android. Todo en la misma vida.</p>
+            </div>
+          </div>
+        </Parallax>
+
+        <Parallax bgImage={white} strength={-200}>
           <div style={{ width: '90vw', height: '70vh' }}>
             <div className='inside-styles-50'>
               <h3>Acerca de Ironhack </h3>
               <p>
-                Fundada en 2013 por Ariel Quiñones y Gonzalo Manrique, Ironhack es una tech school con sede en Madrid, Barcelona, Miami, París, Ciudad de México, Berlín, Amsterdam y Sao Paulo que forma personal capacitado para ocupar nuevos empleos digitales. Ironhack ya ha formado a más de 1,500 estudiantes de 60 nacionalidades distintas en tan solo cuatro años y ha sido reconocida como una de las 3 mejores escuelas del mundo por coursereport.com y switchup.org. La misión de Ironhack: permitir que cualquier persona sea protagonista de la revolución digital. El 85% de los estudiantes encuentran empleo en los tres meses siguientes a su formación.
+                Fundada en 2013 por Ariel Quiñones y Gonzalo Manrique, Ironhack es una tech school con sede en Madrid, Barcelona, Miami, París, Ciudad de México, Berlín, Amsterdam y Sao Paulo que forma personal capacitado para ocupar nuevos empleos digitales. Ironhack ya ha formado a más de 1,500 estudiantes de 60 nacionalidades distintas en tan solo cuatro años y ha sido reconocida como una de las 3 mejores escuelas del mundo por <a href='https://www.coursereport.com/schools/ironhack' target='_blank' rel="noopener noreferrer">Course Report</a> y <a href='https://www.switchup.org/bootcamps/ironhack' target='_blank' rel="noopener noreferrer">Switch Up</a>. La misión de Ironhack: permitir que cualquier persona sea protagonista de la revolución digital. El 85% de los estudiantes encuentran empleo en los tres meses siguientes a su formación.
               </p>
               <iframe style={{marginTop: 30}} title='campus_mx' width="560" height="315" src="https://www.youtube.com/embed/qG6s6Bk3nMU" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
             </div>
@@ -84,17 +129,6 @@ class HomePage extends Component {
           </div>
         </Parallax>
 
-        <Parallax bgImage={white} strength={-200}>
-          <div style={{ width: '90vw', height: '85vh' }}>
-            <div className='inside-styles-50'>
-              <h3>El Instructor</h3>
-              <img src="https://miro.medium.com/fit/c/240/240/0*jp3IFb08Sy3_k3N_." alt="Bliss" style={{margin: 50, borderRadius: '50%'}}/>
-              <h4>Héctor Bliss</h4>
-              <p>Soy de la generación que jugó con Atari, aprendió comandos MSDOS en windows 95, vió jugar a Michael Jordan y ahora usa una Mac para programar con Android. Todo en la misma vida.</p>
-            </div>
-          </div>
-        </Parallax>
-
         <div className='footer'>
           <div>
             <h4>Síguenos</h4>
@@ -105,7 +139,6 @@ class HomePage extends Component {
               <a rel="noopener noreferrer" target="_blank" href="https://github.com/ironhack"><Icon className='icon' type="github" theme="outlined" /></a>
               <a rel="noopener noreferrer" target="_blank" href="https://www.youtube.com/channel/UCWD3Q1-d9vzxt1cXUmpbjqg"><Icon className='icon' type="youtube" theme="outlined" /></a>
             </div>
-
           </div>
           <div>
             <h4>Contáctanos</h4>
@@ -115,6 +148,8 @@ class HomePage extends Component {
             </div>
           </div>
         </div>
+
+        <LoginModal visible={visible} handleCancel={this.handleCancel} facebookLogin={this.loginWithFacebook} googleLogin={this.loginWithGoogle}/>
 
       </div>
     )

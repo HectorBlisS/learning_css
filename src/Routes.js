@@ -7,8 +7,7 @@ import CourseViewer from './components/courses/CourseViewer'
 
 const Routes = () => (
   <Switch>
-    <Route exact path="/home" component={HomePage} />
-    <Route exact path="/" component={LoginPage} />
+    <Route exact path="/" component={HomePage} />
     <Route path="/login" component={LoginPage} />
     <Route path="/profile" component={ProfilePage} />
     <Route exact path="/course/:id/:slug" component={CourseViewer} />
