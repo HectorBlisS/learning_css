@@ -91,3 +91,39 @@ export const updateUser = (data) => {
   
 }
 
+
+//email notify
+export const sendEncourageEmail = (email, displayName) => {
+  // const data = {
+  //   email,
+  //   displayName
+  // }
+  //console.log(data)
+  return fetch('https://us-central1-cursosonline-4b11c.cloudfunctions.net/middleCourse' + `?email=${email}&displayName=${displayName}`,{
+    method:"get",
+    //body:JSON.stringify(data),
+    headers:{
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(res=>res.json())
+  .then(message=>message)
+}
+//finalize course
+export const courseDoneEmail = (email, displayName) => {
+  // const data = {
+  //   email,
+  //   displayName
+  // }
+  //console.log(data)
+  return fetch('https://us-central1-cursosonline-4b11c.cloudfunctions.net/finalCourse' + `?email=${email}&displayName=${displayName}`,{
+    method:"get",
+    //body:JSON.stringify(data),
+    headers:{
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(res=>res.json())
+  .then(message=>message)
+}
+
