@@ -23,7 +23,9 @@ class Enrolled extends Component{
                                 ¡Aún no haz validado tus datos!
                             </h2>
                             <h4 style={{color:"red"}}>
-                                Valida tus datos y comienza el curso =D
+                                Valida tus datos, posteriormente revisa tu correo y da clic en el enlace.
+                                <br/>
+                                entonces el curso aparecerá aquí.  =D
                             </h4>
                         </Card>
                     </div>
