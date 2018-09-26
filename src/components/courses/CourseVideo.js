@@ -23,7 +23,7 @@ class CourseVideo extends Component{
         this.refs.vid.onended = ()=>{
             if(this.props.currentKey === "5.2"){
                 // console.log("sending email")
-                sendEncourageEmail(this.state.user.email, this.state.user.displayName)
+                sendEncourageEmail(this.state.user.uid)
             }
             if(this.props.currentKey === "8.2"){
                 courseDoneEmail(this.state.user.email, this.state.user.displayName)

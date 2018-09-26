@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card, Avatar, Button, Tooltip} from 'antd'
+import {Card, Avatar, Button, Tooltip, Icon} from 'antd'
 import {Link} from 'react-router-dom'
 import * as jsPDF from 'jspdf'
 
@@ -42,11 +42,14 @@ class CourseCard extends React.Component{
         // Set the document to automatically print via JS
         doc.autoPrint()
     }
+
+
     render(){
         const {disabled} = this.state
         const {id=0,slug="animaciones-css",title="Animaciones CSS"} = this.props
     return(
         <div style={{flex:1}} >
+        
             
                 <Card 
                     cover={<img src={img} alt="css" />}
@@ -56,6 +59,9 @@ class CourseCard extends React.Component{
                         marginLeft:20
                         }}
                     title={title}
+                    extra={<div><Icon type="link" /> 
+                        <div className="fb-share-button" data-href="https://learning.ironhack.com.mx" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flearning.ironhack.com.mx%2F&amp;src=sdkpreparse" className="fb-xfbml-parse-ignore" hashtag="#IronhackMEX" >Compartir</a></div>
+                     </div>}
                 >
                 <div>
                 <strong>

@@ -93,13 +93,13 @@ export const updateUser = (data) => {
 
 
 //email notify
-export const sendEncourageEmail = (email, displayName) => {
+export const sendEncourageEmail = (uid) => {
   // const data = {
   //   email,
   //   displayName
   // }
   //console.log(data)
-  return fetch('https://us-central1-cursosonline-4b11c.cloudfunctions.net/middleCourse' + `?email=${email}&displayName=${displayName}`,{
+  return fetch('https://us-central1-cursosonline-4b11c.cloudfunctions.net/middleCourse' + `?id=${uid}`,{
     method:"get",
     //body:JSON.stringify(data),
     headers:{
