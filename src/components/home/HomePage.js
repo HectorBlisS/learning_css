@@ -45,23 +45,23 @@ class HomePage extends Component {
           <a className='logoanchor' href='https://www.ironhack.com/es' target="_blank" rel="noopener noreferrer" >
             <img src='https://cdn-images-1.medium.com/max/1200/1*69RcxrWXuk385lSxkIYYLA.png' alt='banner' />
           </a>
-          <Button onClick={this.handleShow} size='large' type='primary'>Comenzar ahora</Button>
+          <Button onClick={this.handleShow} size='large' type='primary'>Cooming soon</Button>
         </div>
 
         <Parallax bgImage={layer} blur={{ min: -1, max: 5 }} strength={500}>
           <div style={{ height: '95vh', width: '100vw', backgroundColor: 'rgba(0,0,0,.7)'  }}>
             <div className='inside-styles-90'>
-              <img src='https://cdn-images-1.medium.com/max/1200/1*69RcxrWXuk385lSxkIYYLA.png' alt='logo' width='10%'/>
-              <h1>APRENDE DISEÑO WEB DESDE CERO EN LÍNEA</h1>
-              <h2>CREA ANIMACIONES CON HTML, CSS Y JAVASCRIPT</h2>
-              <div style={{ marginTop: '50px', display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}>
-                <span>25 VIDEOS</span>
-                <span>2 HORAS</span>
-                <span>1 EXAMEN FINAL</span>
-                <span>100% ONLINE</span>
-                <span>GRATUITO</span>
+              <img style={{marginBottom: 30}} src='https://cdn-images-1.medium.com/max/1200/1*69RcxrWXuk385lSxkIYYLA.png' alt='logo' width='10%'/>
+              <h1 style={{marginBottom: 30}}>APRENDE DISEÑO WEB DESDE CERO EN LÍNEA</h1>
+              <h2>ANIMACIONES CON HTML, CSS Y JAVASCRIPT</h2>
+              <div style={{ marginTop: 70, display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}>
+                <span className='span-underline'>25 VIDEOS</span>
+                <span className='span-underline'>2 HORAS</span>
+                <span className='span-underline'>1 EXAMEN FINAL</span>
+                <span className='span-underline'>100% ONLINE</span>
+                <span className='span-underline'>GRATUITO</span>
               </div>
-              <Button onClick={this.handleShow} style={{marginTop: '70px', height: 50}} size='large' type='primary'>Comenzar ahora</Button>
+              <Button style={{marginTop: 100, height: 50}} size='large' type='primary'>Coming soon</Button>
             </div>
           </div>
         </Parallax>
@@ -110,21 +110,21 @@ class HomePage extends Component {
         </Parallax>
 
         <Parallax bgImage={white} strength={-200}>
-          <div style={{ width: '90vw', height: '70vh' }}>
+          <div style={{ width: '90vw', height: '70vh', marginTop: 70 }}>
             <div className='inside-styles-50'>
               <h3>Acerca de Ironhack </h3>
               <p>
-                Fundada en 2013 por Ariel Quiñones y Gonzalo Manrique, Ironhack es una tech school con sede en Madrid, Barcelona, Miami, París, Ciudad de México, Berlín, Amsterdam y Sao Paulo que forma personal capacitado para ocupar nuevos empleos digitales. Ironhack ya ha formado a más de 1,500 estudiantes de 60 nacionalidades distintas en tan solo cuatro años y ha sido reconocida como una de las 3 mejores escuelas del mundo por <a href='https://www.coursereport.com/schools/ironhack' target='_blank' rel="noopener noreferrer">Course Report</a> y <a href='https://www.switchup.org/bootcamps/ironhack' target='_blank' rel="noopener noreferrer">Switch Up</a>. La misión de Ironhack: permitir que cualquier persona sea protagonista de la revolución digital. El 85% de los estudiantes encuentran empleo en los tres meses siguientes a su formación.
+                Ironhack es una escuela presencial basada en el modelo <i>bootcamp</i> con campuses en Madrid, Barcelona, Miami, París, Berlín, Amsterdam, Sao Paulo y ahora Ciudad de México. Ironhack ya ha formado a más de 1,500 estudiantes de 60 nacionalidades distintas en Desarrollo Web y UX/UI Design y ha sido reconocida como una de las 3 mejores escuelas del mundo por <a href='https://www.coursereport.com/schools/ironhack' target='_blank' rel="noopener noreferrer">Course Report</a> y <a href='https://www.switchup.org/bootcamps/ironhack' target='_blank' rel="noopener noreferrer">Switch Up</a>. La misión de Ironhack: permitir que cualquier persona sea protagonista de la revolución digital y pueda dar un giro a su carrera. El 85% de los estudiantes encuentran empleo en los tres meses siguientes a su formación.
               </p>
-              <iframe style={{marginTop: 30}} title='campus_mx' width="560" height="315" src="https://www.youtube.com/embed/qG6s6Bk3nMU" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
+              <iframe style={{marginTop: 70}} title='campus_mx' width="560" height="315" src="https://www.youtube.com/embed/qG6s6Bk3nMU" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
             </div>
           </div>
         </Parallax>
 
         <Parallax bgImage={white} strength={-200}>
-          <div style={{ width: '90vw', height: '10vh' }}>
+          <div style={{ width: '90vw', height: '30vh' }}>
             <div className='inside-styles-50'>
-              <Button type='primary' size='large'><a style={{textDecoration: 'none'}} rel="noopener noreferrer" href="https://www.ironhack.com/es" target='_blank'>Visita nuestro sitio web</a></Button>
+              <Button size='large'><a style={{textDecoration: 'none'}} rel="noopener noreferrer" href="https://www.ironhack.com/es" target='_blank'>Visita nuestro sitio web</a></Button>
             </div>
           </div>
         </Parallax>

@@ -83,6 +83,7 @@ span {
 }
 /*ANT DESIGN*/
 
+
 .footer {
     text-align: left !important;
     padding:2% 0;
@@ -142,4 +143,9 @@ span {
 .login-modal-go:hover {
     color: #EA4335;
     cursor: pointer;
+}
+
+.span-underline {
+    border-bottom: 1px solid white;
+    padding-bottom: 2px;
 }
