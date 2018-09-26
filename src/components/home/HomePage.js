@@ -52,16 +52,16 @@ class HomePage extends Component {
           <div style={{ height: '95vh', width: '100vw', backgroundColor: 'rgba(0,0,0,.7)'  }}>
             <div className='inside-styles-90'>
               <img style={{marginBottom: 30}} src='https://cdn-images-1.medium.com/max/1200/1*69RcxrWXuk385lSxkIYYLA.png' alt='logo' width='10%'/>
-              <h1 style={{marginBottom: 30}}>APRENDE DISEÑO WEB DESDE CERO EN LÍNEA</h1>
-              <h2>ANIMACIONES CON HTML, CSS Y JAVASCRIPT</h2>
+              <h1 className='h1-diuri' style={{marginBottom: 30}}>APRENDE DISEÑO WEB DESDE CERO EN LÍNEA</h1>
+              <h2 className='h2-diuri'>ANIMACIONES CON HTML, CSS Y JAVASCRIPT</h2>
               <div style={{ marginTop: 70, display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}>
-                <span className='span-underline'>25 VIDEOS</span>
-                <span className='span-underline'>2 HORAS</span>
-                <span className='span-underline'>1 EXAMEN FINAL</span>
-                <span className='span-underline'>100% ONLINE</span>
-                <span className='span-underline'>GRATUITO</span>
+                <span className='span-underline span-diuri'>25 VIDEOS</span>
+                <span className='span-underline span-diuri'>2 HORAS</span>
+                <span className='span-underline span-diuri'>1 EXAMEN FINAL</span>
+                <span className='span-underline span-diuri'>100% ONLINE</span>
+                <span className='span-underline span-diuri'>GRATUITO</span>
               </div>
-              <Button style={{marginTop: 100, height: 50}} size='large' type='primary'>Coming soon</Button>
+              <Button onClick={this.handleShow} style={{marginTop: 100, height: 50}} size='large' type='primary'>Coming soon</Button>
             </div>
           </div>
         </Parallax>
@@ -69,7 +69,7 @@ class HomePage extends Component {
         <Parallax bgImage={white} strength={-200}>
           <div style={{ width: '90vw', height: '90vh' }}>
             <div className='inside-styles-50'>
-              <h3>¿Por qué este curso en línea?</h3>
+              <h3 className='h3-diuri'>¿Por qué este curso en línea?</h3>
               <p>En un mundo gobernado por la tecnología es más necesario que la gente sepa programar. Estamos convencidos que cualquier persona debería de tener el acceso a este aprendizaje. Este curso gratuito está completamente diseñado para principiantes. A lo largo del curso serás guiado por expertos de Ironhack y verás lo fácil que es aprender a programar, sobre todo de mano de nuestro equipo. Ya no busques excusas, ¡es hora de lanzarte al mundo de la programación!</p>
               <iframe style={{marginTop: 90}} title='video_bliss' width="560" height="315" src="https://www.youtube.com/embed/dV9SGtDNef4" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
             </div>
@@ -79,18 +79,18 @@ class HomePage extends Component {
         <Parallax bgImage={white} strength={-200}>
           <div style={{ width: '90vw', height: '40vh' }}>
             <div className='inside-styles-50'>
-              <h3>Descripción del curso</h3>
+              <h3 className='h3-diuri'>Descripción del curso</h3>
               <div style={{ marginTop: '50px', display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}>
                 <div>
-                  <h4>PUNTO 1</h4>
+                  <h4 className='h4-diuri'>PUNTO 1</h4>
                   <p>Descripción 1</p>
                 </div>
                 <div>
-                  <h4>PUNTO 2</h4>
+                  <h4 className='h4-diuri'>PUNTO 2</h4>
                   <p>Descripción 2</p>
                 </div>
                 <div>
-                  <h4>PUNTO 3</h4>
+                  <h4 className='h4-diuri'>PUNTO 3</h4>
                   <p>Descripción 3</p>
                 </div>
               </div>
@@ -101,8 +101,8 @@ class HomePage extends Component {
         <Parallax bgImage={white} strength={-200}>
           <div style={{ width: '90vw', height: '85vh' }}>
             <div className='inside-styles-50'>
-              <h3>El Instructor</h3>
-              <img src={require('../../assets/blissito.png')} alt="Bliss" style={{width: "40%", borderRadius: "50%", margin: 50}}/>
+              <h3 className='h3-diuri'>El Instructor</h3>
+              <img src={require('../../assets/bliss.jpg')} alt="Bliss" style={{width: "40%", borderRadius: "50%", margin: 50}}/>
               <h4>Héctor Bliss</h4>
               <p>Soy de la generación que jugó con Atari, aprendió comandos MSDOS en windows 95, vió jugar a Michael Jordan y ahora usa una Mac para programar con Android. Todo en la misma vida.</p>
             </div>
@@ -112,7 +112,7 @@ class HomePage extends Component {
         <Parallax bgImage={white} strength={-200}>
           <div style={{ width: '90vw', height: '70vh', marginTop: 70 }}>
             <div className='inside-styles-50'>
-              <h3>Acerca de Ironhack </h3>
+              <h3 className='h3-diuri'>Acerca de Ironhack </h3>
               <p>
                 Ironhack es una escuela presencial basada en el modelo <i>bootcamp</i> con campuses en Madrid, Barcelona, Miami, París, Berlín, Amsterdam, Sao Paulo y ahora Ciudad de México. Ironhack ya ha formado a más de 1,500 estudiantes de 60 nacionalidades distintas en Desarrollo Web y UX/UI Design y ha sido reconocida como una de las 3 mejores escuelas del mundo por <a href='https://www.coursereport.com/schools/ironhack' target='_blank' rel="noopener noreferrer">Course Report</a> y <a href='https://www.switchup.org/bootcamps/ironhack' target='_blank' rel="noopener noreferrer">Switch Up</a>. La misión de Ironhack: permitir que cualquier persona sea protagonista de la revolución digital y pueda dar un giro a su carrera. El 85% de los estudiantes encuentran empleo en los tres meses siguientes a su formación.
               </p>
@@ -131,7 +131,7 @@ class HomePage extends Component {
 
         <div className='footer'>
           <div>
-            <h4>Síguenos</h4>
+            <h4 className='h4-diuri'>Síguenos</h4>
             <div>
               <a rel="noopener noreferrer" target="_blank" href="https://twitter.com/ironhackMEX"><Icon className='icon' type="twitter" theme="outlined" /></a>
               <a rel="noopener noreferrer" target="_blank" href="https://www.facebook.com/ironhackMEX/"><Icon className='icon' type="facebook" theme="filled" /></a>
@@ -141,7 +141,7 @@ class HomePage extends Component {
             </div>
           </div>
           <div>
-            <h4>Contáctanos</h4>
+            <h4 className='h4-diuri'>Contáctanos</h4>
             <div>
               <a rel="noopener noreferrer" target="_blank" href="mailto:contactomex@ironhack.com">contactomex@ironhack.com</a>
               <a rel="noopener noreferrer" target="_blank" href="https://api.whatsapp.com/send?phone=525530391903">55 30 391 903</a>
