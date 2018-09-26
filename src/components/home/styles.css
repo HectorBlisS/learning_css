@@ -1,0 +1,151 @@
+.container {
+    text-align: center;
+}
+
+.inside-styles-90 {
+    width: 90vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.inside-styles-50 {
+    width: 50vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.h1-diuri {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: "Gotham titles";
+}
+
+.h2-diuri {
+    color: white;
+    font-family: "Gotham subtitles";
+}
+
+.h3-diuri {
+    color: #2DC5FA;
+    font-family: "Gotham titles";
+    font-size: 1.5rem;
+}
+
+.h4-diuri {
+    color: black;
+    font-family: "Gotham subtitles";
+    font-size: 1.3rem;
+}
+
+.span-diuri {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.header {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    height: 10%;
+    width: 100vw;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 5px 5px 5px #888888;
+}
+
+.header Button {
+    margin: 120px;
+}
+
+.logoanchor > img {
+    margin: 120px;
+    width: 70px;
+}
+
+.logoanchor {
+    width: 1px;
+}
+/*ANT DESIGN */
+.ant-btn-primary {
+    background-color: #2DC5FA !important;
+    border-color: #2DC5FA !important;
+}
+
+.ant-modal-close-x {
+    color: #2DC5FA !important;
+}
+/*ANT DESIGN*/
+
+
+.footer {
+    text-align: left !important;
+    padding:2% 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    background-color: #2DC5FA;
+    flex-wrap: wrap;
+    color: #2D354C;
+}
+
+.footer > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 25%;
+    text-align: center;
+}
+
+.footer div div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.footer div:nth-child(1) div {
+    margin-top: 20px;
+    flex-direction: row;
+}
+
+.footer a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.icon {
+    font-size: 1.5rem;
+}
+
+.footer a:hover {
+    text-decoration: none;
+    color: #2D354C;
+    cursor: pointer;
+}
+
+.login-modal-fb, .login-modal-go {
+    font-size: 2rem;
+}
+
+.login-modal-fb:hover {
+    color: #3B5998;
+    cursor: pointer;
+}
+
+.login-modal-go:hover {
+    color: #EA4335;
+    cursor: pointer;
+}
+
+.span-underline {
+    border-bottom: 1px solid white;
+    padding-bottom: 2px;
+}
