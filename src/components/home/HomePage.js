@@ -56,7 +56,7 @@ class HomePage extends Component {
               <h2 className='h2-diuri'>ANIMACIONES CON HTML, CSS Y JAVASCRIPT</h2>
               <div style={{ marginTop: 70, display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}>
                 <span className='span-underline span-diuri'>25 VIDEOS</span>
-                <span className='span-underline span-diuri'>2 HORAS</span>
+                <span className='span-underline span-diuri'>1 HORA</span>
                 <span className='span-underline span-diuri'>1 EXAMEN FINAL</span>
                 <span className='span-underline span-diuri'>100% ONLINE</span>
                 <span className='span-underline span-diuri'>GRATUITO</span>
@@ -69,8 +69,15 @@ class HomePage extends Component {
         <Parallax bgImage={white} strength={-200}>
           <div style={{ width: '90vw', height: '90vh' }}>
             <div className='inside-styles-50'>
-              <h3 className='h3-diuri'>¿Por qué este curso en línea?</h3>
-              <p>En un mundo gobernado por la tecnología es más necesario que la gente sepa programar. Estamos convencidos que cualquier persona debería de tener el acceso a este aprendizaje. Este curso gratuito está completamente diseñado para principiantes. A lo largo del curso serás guiado por expertos de Ironhack y verás lo fácil que es aprender a programar, sobre todo de mano de nuestro equipo. Ya no busques excusas, ¡es hora de lanzarte al mundo de la programación!</p>
+              <h3 className='h3-diuri'>¿Por qué tomar este curso en línea?</h3>
+              <p>
+                En un mundo gobernado por la tecnología es más necesario que la gente sepa programar. 
+                Estamos convencidos que cualquier persona debería de tener el acceso a este aprendizaje. 
+                Este curso gratuito está completamente diseñado para principiantes. 
+                A lo largo del curso serás guiado por expertos de Ironhack y verás lo fácil que es aprender a programar, 
+                sobre todo de mano de nuestro equipo. Ya no busques excusas, 
+                ¡es hora de lanzarte al mundo de la programación!
+                </p>
               <iframe style={{marginTop: 90}} title='video_bliss' width="560" height="315" src="https://www.youtube.com/embed/dV9SGtDNef4" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
             </div>
           </div>
@@ -82,29 +89,50 @@ class HomePage extends Component {
               <h3 className='h3-diuri'>Descripción del curso</h3>
               <div style={{ marginTop: '50px', display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}>
                 <div>
-                  <h4 className='h4-diuri'>PUNTO 1</h4>
-                  <p>Descripción 1</p>
+                  <h4 className='h4-diuri'>Animaciones CSS</h4>
+                  <p>
+
+                    Aprenderás a crear animaciones solo con css, utilizaremos atributos básicos como transition 
+                    para animaciones básicas hasta crear keyframes para crear animaciones reutilizables 2D y 3D.
+
+                  </p>
                 </div>
                 <div>
-                  <h4 className='h4-diuri'>PUNTO 2</h4>
-                  <p>Descripción 2</p>
+                  <h4 className='h4-diuri'>JavaScript</h4>
+                  <p>
+
+                    Aprenderás a utilizar JavaScript en conjunto de css para crear animaciones más complejas y crear interactividad con el usuario,
+                    aprenderás a usar jQuery de una manera amena y sencilla.
+
+                  </p>
                 </div>
                 <div>
-                  <h4 className='h4-diuri'>PUNTO 3</h4>
-                  <p>Descripción 3</p>
+                  <h4 className='h4-diuri'>SVG</h4>
+                  <p>
+
+                    Cómo contenido "bonus" aprenderás qué es una imagen SVG, crearemos una a mano para explorar está tecnología, y la manipularas con css para
+                    crear animaciones increibles para tus proyectos.
+
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </Parallax>
-
+    
         <Parallax bgImage={white} strength={-200}>
-          <div style={{ width: '90vw', height: '85vh' }}>
+          <div style={{ marginTop:100, width: '90vw', height: '85vh' }}>
             <div className='inside-styles-50'>
               <h3 className='h3-diuri'>El Instructor</h3>
               <img src={require('../../assets/bliss.jpg')} alt="Bliss" style={{width: "40%", borderRadius: "50%", margin: 50}}/>
               <h4>Héctor Bliss</h4>
-              <p>Soy de la generación que jugó con Atari, aprendió comandos MSDOS en windows 95, vió jugar a Michael Jordan y ahora usa una Mac para programar con Android. Todo en la misma vida.</p>
+              <p>Bliss, es un desarrollador obsesionado con aprender cómo funciona la tecnología y herramientas que usan empresas de gran tamaño como Google o Facebook,
+                si no está aprendiendo un tema nuevo lo puedes encontrar compartiendo y enseñando en comunidad, con más de 6 años enseñando tecnología Bliss, 
+                comparte tanto en los grupos oficiales de Google para desarrolladores
+                como en el ecosistema emprendedor de México ayudando a emprendedores a aterrizar sus ideas tecnológicas. Héctor es el fundador de la comunidad oficial de Google: #FirebaseMX ha sido instructor en diferentes bootcamps 
+                y escuelas de coding en toda la republica mexicana y actualmente es el Lead Teacher para el curso de desarrollo web de tiempo completo de Ironhack en México.
+                Bliss es muy buen programador, pero él se considera a si mismo un educador, ya que su irreverencia y su estilo único te harán reir mientras aprendes temas muy complejos. 
+                 </p>
             </div>
           </div>
         </Parallax>
