@@ -91,6 +91,66 @@ const writeInMitad = (email, displayName, phoneNumber) => {
   
 }
 
+const writeInApproved = (user) => {
+    const values = [[]];
+  
+    // for(let k in user){
+    //   values[0].push(user[k])
+    // }
+    
+    values[0].push(user.displayName)
+    values[0].push(user.firstName)
+    values[0].push(user.lastName)
+    values[0].push(user.email)
+    values[0].push(user.phoneNumber)
+    values[0].push(new Date())
+    values[0].push(user.uid)
+  
+    sheets.spreadsheets.values.append({
+      auth: jwtClient,
+      spreadsheetId: '1g8AnpDPnxcubKJHKHGJ0Fo-Eu_ybndV-MLmtJ_OOq6o',
+      range: 'aprobados',
+      valueInputOption: 'RAW',
+      insertDataOption: 'INSERT_ROWS',
+      resource: {
+        values
+      }
+    }, (err, response) => {
+      if (err) return console.error(err)
+    })
+  
+}
+
+const writeInNotApproved = (user) => {
+    const values = [[]];
+  
+    // for(let k in user){
+    //   values[0].push(user[k])
+    // }
+    
+    values[0].push(user.displayName)
+    values[0].push(user.firstName)
+    values[0].push(user.lastName)
+    values[0].push(user.email)
+    values[0].push(user.phoneNumber)
+    values[0].push(new Date())
+    values[0].push(user.uid)
+  
+    sheets.spreadsheets.values.append({
+      auth: jwtClient,
+      spreadsheetId: '1g8AnpDPnxcubKJHKHGJ0Fo-Eu_ybndV-MLmtJ_OOq6o',
+      range: 'reprobados',
+      valueInputOption: 'RAW',
+      insertDataOption: 'INSERT_ROWS',
+      resource: {
+        values
+      }
+    }, (err, response) => {
+      if (err) return console.error(err)
+    })
+  
+}
+
 
 
 // const hbs = require('hbs');
@@ -204,6 +264,38 @@ exports.activateAccount = functions.https.onRequest((req, res) => {
 
     
 });
+
+exports.examApproved = functions.https.onRequest((req,res)=>{
+    const {uid} = req.query
+    const store = admin.firestore()
+    store.collection('users').doc(uid).get()
+    .then(doc=>{
+        if(!doc.exists) return res.status(404).send({message:"Este usuario no existe."})
+        const user = doc.data()
+        if(!user.approved) return res.status(404).send({message:"Este usuario No ha aprovado el examen"})
+        writeInApproved(user)
+        cors(req, res, () => {
+            return res.status(201).send({message:"Escribiendo"})
+          })
+       
+    })
+})
+
+exports.examNotApproved = functions.https.onRequest((req,res)=>{
+    const {uid} = req.query
+    const store = admin.firestore()
+    store.collection('users').doc(uid).get()
+    .then(doc=>{
+        if(!doc.exists) return res.status(404).send({message:"Este usuario no existe."})
+        const user = doc.data()
+        if(user.approved) return res.status(404).send({message:"Este usuario ya ha aprovado el examen"})
+        writeInNotApproved(user)
+        cors(req, res, () => {
+            return res.status(201).send({message:"Escribiendo"})
+          })
+       
+    })
+})
 
 //nodemailer
 

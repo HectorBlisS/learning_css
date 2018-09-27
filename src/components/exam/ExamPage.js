@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Radio, Button} from 'antd'
 import swal from 'sweetalert'
-import {updateUser} from '../../services/firebase'
+import {updateUser, examApproved, examNotApproved} from '../../services/firebase'
 
 export default class ExamPage extends Component{
 
@@ -84,13 +84,18 @@ export default class ExamPage extends Component{
         const title = prom > 70 ? "¡LO LOGRASTE!" : "ESTUVISTE MUY CERCA"
         const win = prom > 70 ? "PASASTE" : "PERO DEBES INTENTAR NUEVAMENTE"
         const success = prom > 70 ? "success" : "error"
+        const {user} = this.state
         if(!order.length){
             swal(title, win, success)
             if(!(prom > 70)) {
+                //not approved
+                examNotApproved(user.uid)
                 return this.props.history.push('/course/0/animaciones-css')
             } 
-            const {user} = this.state
             user.approved = true
+            //addToSheet
+            examApproved(user.uid)
+            //
             updateUser(user)
             setTimeout(()=>this.props.history.push('/profile'),1000)
             return
