@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Card} from 'antd'
+import {Link} from 'react-router-dom'
 
 
 class CourseMenu extends Component{
@@ -62,8 +63,14 @@ class CourseMenu extends Component{
                 <Card.Grid onClick={()=>this.setVideo("8.1")} style={currentKey === '8.1' ? selectedGridStyle : gridStyle}>¿Donde aprender más?</Card.Grid>
                 <Card.Grid onClick={()=>this.setVideo("8.2")} style={currentKey === '8.2' ? selectedGridStyle : gridStyle}>¿Qué sigue?</Card.Grid>
 
-                <Card.Grid style={separator}>EXAMEN</Card.Grid>
-                <Card.Grid style={gridStyle}>Responder el examen</Card.Grid>
+                <Card.Grid style={separator}>
+EXAMEN
+                </Card.Grid>
+                <Card.Grid style={gridStyle}>
+                <Link to="/exam/animations">
+                Responder el Examen
+                </Link>
+                </Card.Grid>
 
             </Card>
         )

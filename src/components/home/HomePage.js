@@ -46,6 +46,7 @@ class HomePage extends Component {
             <img src='https://cdn-images-1.medium.com/max/1200/1*69RcxrWXuk385lSxkIYYLA.png' alt='banner' />
           </a>
           <Button onClick={this.handleShow} size='large' type='primary'>Cooming soon</Button>
+          <a onClick={this.loginWithGoogle} >Login</a>
         </div>
 
         <Parallax bgImage={layer} blur={{ min: -1, max: 5 }} strength={500}>
@@ -126,11 +127,11 @@ class HomePage extends Component {
               <h3 className='h3-diuri'>El Instructor</h3>
               <img src={require('../../assets/bliss.jpg')} alt="Bliss" style={{width: "40%", borderRadius: "50%", margin: 50}}/>
               <h4>Héctor Bliss</h4>
-              <p>Bliss, es un desarrollador obsesionado con aprender cómo funciona la tecnología y herramientas que usan empresas de gran tamaño como Google o Facebook,
-                si no está aprendiendo un tema nuevo lo puedes encontrar compartiendo y enseñando en comunidad, con más de 6 años enseñando tecnología Bliss, 
+              <p>Bliss, es un desarrollador obsesionado con aprender cómo funciona la tecnología y herramientas que usan empresas de gran tamaño como Google, Uber, Airbnb o Facebook,
+                si no está aprendiendo un tema nuevo lo puedes encontrar compartiendo y enseñando en comunidad de forma gratuita, con más de 6 años enseñando tecnología Bliss, 
                 comparte tanto en los grupos oficiales de Google para desarrolladores
                 como en el ecosistema emprendedor de México ayudando a emprendedores a aterrizar sus ideas tecnológicas. Héctor es el fundador de la comunidad oficial de Google: #FirebaseMX ha sido instructor en diferentes bootcamps 
-                y escuelas de coding en toda la republica mexicana y actualmente es el Lead Teacher para el curso de desarrollo web de tiempo completo de Ironhack en México.
+                y escuelas de "coding" en toda la republica mexicana. Actualmente es el "Lead Teacher" en el curso de desarrollo web de tiempo completo de Ironhack en México.
                 Bliss es muy buen programador, pero él se considera a si mismo un educador, ya que su irreverencia y su estilo único te harán reir mientras aprendes temas muy complejos. 
                  </p>
             </div>

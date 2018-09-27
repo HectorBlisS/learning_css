@@ -83,10 +83,10 @@ import 'firebase/firestore';
   }
 
 //update profile
-export const updateUser = (data) => {
-  return usersRef.doc(data.uid).update(data)
+export const updateUser = (user) => {
+  return usersRef.doc(user.uid).update(user)
   .then(()=>{
-    localStorage.setItem('user', JSON.stringify(data))
+    localStorage.setItem('user', JSON.stringify(user))
   })
   
 }

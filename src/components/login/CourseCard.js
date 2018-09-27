@@ -17,7 +17,8 @@ class CourseCard extends React.Component{
 
     componentWillMount(){
         const user = JSON.parse(localStorage.getItem('user'))
-        this.setState({user})
+        const disabled = !user.approved
+        this.setState({user, disabled})
     }
 
     pdf = () => {
