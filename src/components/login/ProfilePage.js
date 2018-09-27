@@ -1,13 +1,17 @@
 import React, {Component} from 'react'
 import ProfileDisplay from './ProfileDisplay';
 import Enrolled from './Enrolled'
-import {updateUser} from '../../services/firebase'
+import firebase, {updateUser} from '../../services/firebase'
 import swal from 'sweetalert';
+
+import {Button} from 'antd'
+
 
 
 class ProfilePage extends Component{
 
     state = {
+        imgData:null,
         logged:false,
         user:null,
         respaldo:null,
@@ -20,6 +24,19 @@ class ProfilePage extends Component{
         const user = JSON.parse(localStorage.getItem('user'))
         if(!user) return this.props.history.goBack()
         this.setState({logged:true, user, respaldo:{...user}})
+        this.checkUserStatus(user)
+    }
+
+    checkUserStatus = (usuario) => {
+        firebase.firestore().collection('users').doc(usuario.uid).get()
+        .then(doc=>{
+            if(!doc.exists) return
+            let user = JSON.stringify(doc.data())
+            localStorage.setItem('user', user)
+            user = JSON.parse(user)
+            this.setState({user})
+        })
+           
     }
 
     onChange = (field, value) => {
@@ -61,11 +78,11 @@ class ProfilePage extends Component{
         if(!this.validateData()) return
         //add the validated field
         const {user} = this.state
-        user.validated = true
+        // user.validated = true
         updateUser(user)
         .then(user=>{
             this.setState({loading:false, visible:false, respaldo:{...this.state.user}})
-            swal("¡Maravilloso!", "Ahora puedes disfrutar del curso ¡gratis!", "success");
+            swal("¡Maravilloso!", "Ahora, ¡Solo falta que confirmes el E-mail que te hemos mandado!", "success");
         })
         .catch(e=>console.log(e))
       }
@@ -83,6 +100,8 @@ class ProfilePage extends Component{
           visible: true,
         });
       }
+
+    
 
     render(){
         //console.log(this.state.respaldo)
@@ -105,6 +124,8 @@ class ProfilePage extends Component{
                     user={user}
                 />
             </div>
+
+
         </section>
         )
     }
