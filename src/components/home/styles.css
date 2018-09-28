@@ -10,6 +10,14 @@
     transform: translate(-50%,-50%);
 }
 
+.inside-styles-80 {
+    width: 80vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
 .inside-styles-50 {
     width: 50vw;
     position: absolute;
@@ -28,18 +36,29 @@
 .h2-diuri {
     color: white;
     font-family: "Gotham subtitles";
+    line-height: 1.5em;
 }
 
 .h3-diuri {
     color: #2DC5FA;
     font-family: "Gotham titles";
-    font-size: 1.5rem;
+    font-size: 1.9rem;
 }
 
 .h4-diuri {
     color: black;
     font-family: "Gotham subtitles";
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+}
+
+.h5-diuri {
+    font-size: 1.2rem;
+    text-align: justify;
+}
+
+.h6-diuri {
+    font-size: 1.1rem;
+    text-align: justify;
 }
 
 .span-diuri {
@@ -57,7 +76,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 5px 5px 5px #888888;
+    box-shadow: 3px 3px 3px rgba(136,136,136, 0.5   );
 }
 
 .header Button {
@@ -90,9 +109,9 @@
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
-    background-color: #2DC5FA;
+    background-color: #2D354C;;
     flex-wrap: wrap;
-    color: #2D354C;
+    color: #2DC5FA;
 }
 
 .footer > div{
@@ -127,7 +146,7 @@
 
 .footer a:hover {
     text-decoration: none;
-    color: #2D354C;
+    color: #2DC5FA;
     cursor: pointer;
 }
 
@@ -148,4 +167,12 @@
 .span-underline {
     border-bottom: 1px solid white;
     padding-bottom: 2px;
+}
+
+.points {
+    margin: 50px;
+}
+
+.icons-svg {
+    margin-bottom: 50px;
 }
