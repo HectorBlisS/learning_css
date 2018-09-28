@@ -45,7 +45,7 @@ export default class ExamPage extends Component{
         const {order} = this.state
         // const prom = this.state.points / this.state.order.length
         const prom = this.state.points
-        const title = prom > 70 ? "¡LO LOGRASTE!" : "ESTUvISTE MUY CERCA"
+        const title = prom > 70 ? "¡LO LOGRASTE!" : "ESTUVISTE MUY CERCA"
         const win = prom > 70 ? "PASASTE" : "PERO DEBES INTENTAR NUEVAMENTE"
         const success = prom > 70 ? "success" : "error"
         const {user} = this.state
