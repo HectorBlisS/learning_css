@@ -15,9 +15,9 @@ export const LoginModal = ({visible, handleCancel, facebookLogin, googleLogin}) 
         <p>Google</p>
       </div>*/}
 
-      <p>Dejanos tu correo y te avisaremos cuando esté listo el curso</p>
+      <p>Déjanos tu correo y sé de los primeros en tomar este curso</p>
       <Input type='email' placeholder='Email'/>
-      <Button style={{marginTop: 30}} type='primary'> Enviar </Button>
+      <Button onClick={handleCancel} style={{marginTop: 30}} type='primary'> Enviar </Button>
     </Modal>
   </div>
 
