@@ -28,25 +28,30 @@ import 'firebase/firestore';
 
 //login
   export const facebookLogin = () => {
-    return firebase.auth().signInWithPopup(fProvider)
-        .then(result => {
-            return findOrCreateUser(result.user)
-        })
-        .catch(e=>{
-            console.log(e)
-            return e
-        })
+    return firebase.auth().signInWithRedirect(fProvider)
+        // .then(result => {
+        //     return findOrCreateUser(result.user)
+        // })
+        // .catch(e=>{
+        //     console.log(e)
+        //     return e
+        // })
   }
 
   export const googleLogin = () => {
-    return firebase.auth().signInWithPopup(gProvider)
-        .then(result => {
-            return findOrCreateUser(result.user)
-        })
-        .catch(e=>{
-            console.log(e)
-            return e
-        })
+    return firebase.auth().signInWithRedirect(gProvider);
+        // .then(result => {
+        //     return findOrCreateUser(result.user)
+        // })
+        // .catch(e=>{
+        //     console.log(e)
+        //     return e
+        // })
+  }
+
+  export const redirectedUser = (result) => {
+    console.log(result)
+    return findOrCreateUser(result.user)
   }
 
   const findOrCreateUser = (data) => {
