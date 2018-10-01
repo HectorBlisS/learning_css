@@ -86,16 +86,14 @@ class HomePage extends Component {
         <Parallax bgImage={white} strength={-200}>
           <div style={{ width: '90vw', height: '90vh', marginTop: 70 }}>
             <div className='inside-styles-50'>
-              <h3 className='h3-diuri'>¿Por qué tomar este curso en línea?</h3>
+              <h3 className='h3-diuri' style={{marginBottom: 30}}>¿Por qué tomar un curso de diseño web?</h3>
               <h5 className='h5-diuri'>
-                En un mundo gobernado por la tecnología es más necesario que la gente sepa programar. 
-                Estamos convencidos de que cualquier persona debería de tener el acceso a este aprendizaje.
-                Este curso gratuito está completamente diseñado para principiantes. 
-                A lo largo del curso serás guiado por expertos de Ironhack y verás lo fácil que es aprender a programar, 
-                sobre todo de mano de nuestro equipo. Ya no busques excusas, 
-                ¡es hora de lanzarte al mundo de la programación!
-                </h5>
-              <iframe style={{marginTop: 50}} title='video_bliss' width="560" height="315" src="https://www.youtube.com/embed/dV9SGtDNef4" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
+                En un mundo gobernado por la tecnología es necesario que la gente tenga bases sólidas de programación web; en Ironhack estamos convencidos
+                que cualquier persona debería de tener el acceso a este aprendizaje. Por eso creamos este <strong>curso gratuito</strong> que está
+                completamente diseñado para principiantes y guiado por expertos de Ironhack. Verás lo fácil que es aprender a programar, sobre todo de mano
+                de nuestro equipo. No hay excusas, ¡es hora de lanzarte al mundo de la programación!
+              </h5>
+              <iframe style={{marginTop: 50}} title='video_bliss' width="560" height="315" src="https://www.youtube.com/embed/dV9SGtDNef4"></iframe>
             </div>
           </div>
         </Parallax>
@@ -109,24 +107,24 @@ class HomePage extends Component {
                   <CssIcon className='icons-svg' />
                   <h4 className='h4-diuri'>Animaciones CSS</h4>
                   <h5 className='h5-diuri'>
-                    Aprenderás a crear animaciones solo con css, utilizaremos atributos básicos como transition 
-                    para animaciones básicas hasta crear keyframes para crear animaciones reutilizables 2D y 3D.
+                    Aprenderás a crear animaciones solo con css. Utilizaremos atributos básicos como <i>transition</i> para animaciones básicas hasta crear
+                    keyframes para crear animaciones reutilizables 2D y 3D
                   </h5>
                 </div>
                 <div className='points'>
                   <JsIcon className='icons-svg' />
                   <h4 className='h4-diuri'>JavaScript</h4>
                   <h5 className='h5-diuri'>
-                    Aprenderás a utilizar JavaScript en conjunto de css para crear animaciones más complejas y crear interactividad
-                    con el usuario, aprenderás a usar jQuery de una manera amena y sencilla.
+                    Aprenderás a utilizar JavaScript en conjunto de CSS para crear animaciones más complejas y crear interactividad con el usuario. También
+                    entenderás cómo usar jQuery de una manera amena y sencilla.
                   </h5>
                 </div>
                 <div className='points'>
                   <SvgIcon className='icons-svg' />
                   <h4 className='h4-diuri'>SVG</h4>
                   <h5 className='h5-diuri'>
-                    Cómo contenido "bonus" aprenderás qué es una imagen SVG, crearemos una a mano para explorar está tecnología,
-                    y la manipularas con css para crear animaciones increibles para tus proyectos.
+                    Como contenido <i>bonus</i> aprenderás qué es una imágen SVG. Crearemos una a mano para explorar esta tecnología y la manipularás con CSS
+                    para crear animaciones increíbles para tus proyectos.
                   </h5>
                 </div>
               </div>
@@ -135,25 +133,20 @@ class HomePage extends Component {
         </Parallax>
     
         <Parallax bgImage={white} strength={-200} >
-          <div style={{backgroundColor: '#f8f8f8', width:'100vw'}}>
           <div style={{ marginTop: 30, width: '90vw', height: '90vh' }}>
             <div className='inside-styles-80'>
               <h3 className='h3-diuri' style={{marginBottom: 50}}>El Instructor</h3>
-              <img src='https://miro.medium.com/fit/c/240/240/0*jp3IFb08Sy3_k3N_.' alt="Bliss" style={{width: "20%", borderRadius: "50%", marginBottom: 30}}/>
+              <img src={require('../../assets/blissiimg.gif')} alt="Bliss" style={{width: "20%", borderRadius: "50%", marginBottom: 30}}/>
               <h4 className='h4-diuri'>Héctor Bliss</h4>
-                <h6 className='h6-diuri' style={{marginTop: 30}}>
+                <h5 className='h6-diuri' style={{marginTop: 30}}>
                   Bliss, es un desarrollador obsesionado con aprender cómo funciona la tecnología y herramientas que usan empresas de gran tamaño como
-                  Google, Uber, Airbnb o Facebook, si no está aprendiendo un tema nuevo lo puedes encontrar compartiendo y enseñando en comunidad de forma
-                  gratuita, con más de 6 años enseñando tecnología Bliss, comparte tanto en los grupos oficiales de Google para desarrolladores
-                  como en el ecosistema emprendedor de México ayudando a emprendedores a aterrizar sus ideas tecnológicas.
-                  Héctor es el fundador de la comunidad oficial de Google: #FirebaseMX ha sido instructor en diferentes bootcamps y escuelas de "coding" en
-                  toda la republica mexicana.
-                  Actualmente es el "Lead Teacher" en el curso de desarrollo web de tiempo completo de Ironhack en México.
-                  Bliss es muy buen programador, pero él se considera a si mismo un educador, ya que su irreverencia y su estilo único te harán reir mientras
-                  aprendes temas muy complejos.
-                </h6>
+                  Google, Uber, Airbnb o Facebook. Si no está aprendiendo un tema nuevo lo puedes encontrar compartiendo y enseñando en comunidad de forma
+                  gratuita. Con más de 6 años enseñando tecnología Bliss comparte tanto en los grupos oficiales de Google para desarrolladores como en el
+                  ecosistema emprendedor de México ayudando a emprendedores a aterrizar sus ideas tecnológicas. Héctor es el fundador de la comunidad
+                  oficial de Google: #FirebaseMX ha sido instructor en diferentes bootcamps y escuelas de <i>coding</i> en toda la republica mexicana.
+                  Actualmente es el <i>Lead Teacher</i> en el curso de Desarrollo Web de tiempo completo en Ironhack México.
+                </h5>
             </div>
-          </div>
           </div>
         </Parallax>
 
@@ -162,9 +155,12 @@ class HomePage extends Component {
             <div className='inside-styles-80'>
               <h3 className='h3-diuri'>Acerca de Ironhack </h3>
               <h5 className='h5-diuri'>
-                Ironhack es una escuela presencial basada en el modelo <i>bootcamp</i> con campuses en Madrid, Barcelona, Miami, París, Berlín, Amsterdam, Sao Paulo y ahora Ciudad de México. Ironhack ya ha formado a más de 1,500 estudiantes de 60 nacionalidades distintas en Desarrollo Web y UX/UI Design y ha sido reconocida como una de las 3 mejores escuelas del mundo por <a href='https://www.coursereport.com/schools/ironhack' target='_blank' rel="noopener noreferrer">Course Report</a> y <a href='https://www.switchup.org/bootcamps/ironhack' target='_blank' rel="noopener noreferrer">Switch Up</a>. La misión de Ironhack: permitir que cualquier persona sea protagonista de la revolución digital y pueda dar un giro a su carrera. El 85% de los estudiantes encuentran empleo en los tres meses siguientes a su formación.
+                Ironhack es una escuela que ofrece bootcamps presenciales en Desarrollo Web y Diseño UX/UI, con campus en Madrid, Barcelona, Miami, París,
+                Berlín, Amsterdam, Sao Paulo y ahora Ciudad de México. Ironhack ha formado a más de 1,500 estudiantes de 60 nacionalidades distintas y es
+                reconocida como una de las 3 mejores escuelas de educación tecnológica del mundo por <a href='https://www.coursereport.com/schools/ironhack'               target='_blank' rel="noopener noreferrer">Course Report</a> y <a href='https://www.switchup.org/bootcamps/ironhack' target='_blank'                       rel="noopener noreferrer">Switch Up</a>. La misión de Ironhack es permitir que cualquier persona sea protagonista de la revolución digital
+                y pueda dar un giro a su carrera. El 85% de los estudiantes encuentran empleo en los tres meses siguientes a su formación.
               </h5>
-              <iframe style={{marginTop: 60}} title='campus_mx' width="560" height="315" src="https://www.youtube.com/embed/qG6s6Bk3nMU" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
+              <iframe style={{marginTop: 60}} title='campus_mx' width="560" height="315" src="https://www.youtube.com/embed/qG6s6Bk3nMU"></iframe>
             </div>
           </div>
         </Parallax>
@@ -172,7 +168,8 @@ class HomePage extends Component {
         <Parallax bgImage={white} strength={-200}>
           <div style={{ width: '90vw', height: '30vh' }}>
             <div className='inside-styles-50'>
-              <Button size='large'><a style={{textDecoration: 'none'}} rel="noopener noreferrer" href="https://www.ironhack.com/es" target='_blank'>Visita nuestro sitio web</a></Button>
+              <Button size='large'><a style={{textDecoration: 'none'}} rel="noopener noreferrer" href="https://www.ironhack.com/es" target='_blank'>Visita
+                nuestro sitio web</a></Button>
             </div>
           </div>
         </Parallax>
