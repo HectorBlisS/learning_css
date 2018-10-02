@@ -16,6 +16,9 @@ class HomePage extends Component {
 
   handleCancel = () => {
     this.setState({visible:false});
+  };
+
+  handleSubmit = () => {
     swal("¡Listo!", "Ahora, ¡Solo falta que confirmes el E-mail que te hemos mandado!", "success");
   };
 
@@ -194,7 +197,7 @@ class HomePage extends Component {
           </div>
         </div>
 
-        <LoginModal visible={visible} handleCancel={this.handleCancel} facebookLogin={this.loginWithFacebook} googleLogin={this.loginWithGoogle}/>
+        <LoginModal visible={visible} handleSubmit={this.handleSubmit} handleCancel={this.handleCancel} facebookLogin={this.loginWithFacebook} googleLogin={this.loginWithGoogle}/>
 
       </div>
     )
