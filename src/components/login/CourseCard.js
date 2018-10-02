@@ -94,6 +94,9 @@ class CourseCard extends React.Component{
                         >
                         Descargar Certificado
                     </Button>
+                    <Link to="/exam/animations">
+                        <Button type="dashed" >Resolver el examen</Button>
+                    </Link>
                 </Tooltip>
                 :
                 <Button

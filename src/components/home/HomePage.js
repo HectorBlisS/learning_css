@@ -4,15 +4,32 @@ import { Button, Icon } from 'antd';
 import layer from '../../assets/Screen Shot 2018-09-18 at 16.53.00.png';
 import white from '../../assets/finalfinal.jpg';
 import {LoginModal} from "./Modal";
-import {facebookLogin, googleLogin} from "../../services/firebase";
+import firebase, {facebookLogin, googleLogin, redirectedUser} from "../../services/firebase";
 import {CssIcon, JsIcon, SvgIcon} from './icons'
 import swal from 'sweetalert';
 
 class HomePage extends Component {
 
   state = {
-    visible: false
+    visible: false,
+    loading:true
   };
+
+  componentWillMount(){
+    firebase.auth().getRedirectResult().then((result)=>{
+      if(!result.user) return this.setState({loading:false})
+      // The signed-in user info.
+      redirectedUser(result)
+      .then(()=>{
+
+        this.setState({loading:false})
+        this.props.history.push('/profile')
+
+      })
+      .catch(e=>swal("Algo falló", "Intentalo más tarde", "error"))
+    })
+
+  }
 
   handleCancel = () => {
     this.setState({visible:false});
@@ -28,22 +45,22 @@ class HomePage extends Component {
 
   loginWithFacebook = () => {
     facebookLogin()
-      .then(()=>{
-        this.props.history.push('/profile')
-      })
-      .catch(e=>console.log(e))
+      // .then(()=>{
+      //   this.props.history.push('/profile')
+      // })
+      // .catch(e=>console.log(e))
   };
 
   loginWithGoogle = () => {
     googleLogin()
-      .then(()=>{
-        this.props.history.push('/profile')
-      })
-      .catch(e=>console.log(e))
+      // .then(()=>{
+      //   this.props.history.push('/profile')
+      // })
+      // .catch(e=>console.log(e))
   };
 
   render(){
-    const {visible} = this.state;
+    const {visible, loading} = this.state;
     return(
       <div className='container'>
 
@@ -51,7 +68,7 @@ class HomePage extends Component {
           <a className='logoanchor' href='https://www.ironhack.com/es' target="_blank" rel="noopener noreferrer" >
             <img src='https://cdn-images-1.medium.com/max/1200/1*69RcxrWXuk385lSxkIYYLA.png' alt='banner' />
           </a>
-          <Button onClick={this.handleShow} size='large' type='primary'>Coming soon</Button>
+          <Button loading={loading} onClick={this.handleShow} size='large' type='primary'>Coming soon</Button>
         </div>
 
         <Parallax bgImage={layer} blur={{ min: -1, max: 5 }} strength={500}>
@@ -81,7 +98,7 @@ class HomePage extends Component {
                   GRATUITO
                 </span>
               </div>
-              <Button onClick={this.handleShow} style={{marginTop: 70, height: 50}} size='large' type='primary'>Coming soon</Button>
+              <Button loading={loading} onClick={this.handleShow} style={{marginTop: 70, height: 50}} size='large' type='primary'>Coming soon</Button>
             </div>
           </div>
         </Parallax>
