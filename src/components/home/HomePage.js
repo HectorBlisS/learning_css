@@ -68,7 +68,7 @@ class HomePage extends Component {
           <a className='logoanchor' href='https://www.ironhack.com/es' target="_blank" rel="noopener noreferrer" >
             <img src='https://cdn-images-1.medium.com/max/1200/1*69RcxrWXuk385lSxkIYYLA.png' alt='banner' />
           </a>
-          <Button loading={loading} onClick={this.handleShow} size='large' type='primary'>Coming soon</Button>
+          <Button loading={loading} onClick={this.handleShow} size='large' type='primary'>Ver el curso</Button>
         </div>
 
         <Parallax bgImage={layer} blur={{ min: -1, max: 5 }} strength={500}>
@@ -98,7 +98,7 @@ class HomePage extends Component {
                   GRATUITO
                 </span>
               </div>
-              <Button loading={loading} onClick={this.handleShow} style={{marginTop: 70, height: 50}} size='large' type='primary'>Coming soon</Button>
+              <Button loading={loading} onClick={this.handleShow} style={{marginTop: 70, height: 50}} size='large' type='primary'>Ver el curso</Button>
             </div>
           </div>
         </Parallax>
