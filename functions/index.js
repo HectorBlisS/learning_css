@@ -103,6 +103,7 @@ const writeInApproved = (user) => {
     values[0].push(user.lastName)
     values[0].push(user.email)
     values[0].push(user.phoneNumber)
+    values[0].push(user.points)
     values[0].push(new Date())
     values[0].push(user.uid)
   
