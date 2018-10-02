@@ -17,12 +17,12 @@ class HomePage extends Component {
 
   componentWillMount(){
     firebase.auth().getRedirectResult().then((result)=>{
-      if(!result.user) return this.setState({loading:false})
+      if(!result.user) return this.setState({loading:false});
       // The signed-in user info.
       redirectedUser(result)
       .then(()=>{
 
-        this.setState({loading:false})
+        this.setState({loading:false});
         this.props.history.push('/profile')
 
       })
@@ -36,7 +36,7 @@ class HomePage extends Component {
   };
 
   handleSubmit = () => {
-    swal("¡Listo!", "Ahora, ¡Solo falta que confirmes el E-mail que te hemos mandado!", "success");
+    swal("¡Gracias!", "Nos pondremos en contacto contigo cuando lancemos el curso.", "success");
   };
 
   handleShow = () => {
@@ -68,7 +68,7 @@ class HomePage extends Component {
           <a className='logoanchor' href='https://www.ironhack.com/es' target="_blank" rel="noopener noreferrer" >
             <img src='https://cdn-images-1.medium.com/max/1200/1*69RcxrWXuk385lSxkIYYLA.png' alt='banner' />
           </a>
-          <Button loading={loading} onClick={this.handleShow} size='large' type='primary'>Ver el curso</Button>
+          <Button loading={loading} onClick={this.handleShow} size='large' type='primary'>Regístrate</Button>
         </div>
 
         <Parallax bgImage={layer} blur={{ min: -1, max: 5 }} strength={500}>
@@ -98,7 +98,7 @@ class HomePage extends Component {
                   GRATUITO
                 </span>
               </div>
-              <Button loading={loading} onClick={this.handleShow} style={{marginTop: 70, height: 50}} size='large' type='primary'>Ver el curso</Button>
+              <Button loading={loading} onClick={this.handleShow} style={{marginTop: 70, height: 50}} size='large' type='primary'>Regístrate</Button>
             </div>
           </div>
         </Parallax>
