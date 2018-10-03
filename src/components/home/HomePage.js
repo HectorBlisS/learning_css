@@ -184,11 +184,8 @@ class HomePage extends Component {
                 que cualquier persona sea protagonista de la revolución digital y pueda dar un giro a su carrera. <strong>El 85% de los estudiantes encuentran empleo en los tres meses siguiente
                 a su formación.</strong>
               </h5>
-              <video
-                ref="vid" 
-                controls
-                controlsList="nodownload"
-                src='https://firebasestorage.googleapis.com/v0/b/landingpagecss.appspot.com/o/Discover_Ironhack_Mexico_City(youtube.com).mp4?alt=media&token=de605a7b-7132-4390-a453-4266d22171e4'></video>
+              <video ref="vid" controls controlsList="nodownload"
+                src='https://firebasestorage.googleapis.com/v0/b/landingpagecss.appspot.com/o/Discover_Ironhack_Mexico_City(youtube.com).mp4?alt=media&token=9d44d1b7-d7a1-4e23-8053-20beccce749d'></video>
             </div>
           </div>
         </Parallax>
