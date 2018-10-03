@@ -4,28 +4,28 @@
 }
 
 /*****HEADER*****/
-.header {
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    height: 80px;
-    width: 100vw;
-    background: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 3px 3px 3px rgba(136,136,136, 0.5   );
-}
-.header Button {
-    margin: 120px;
-}
-.logoanchor > img {
-    margin: 120px;
-    width: 25%;
-}
-.logoanchor {
-    width: 20%;
-}
+    .header {
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        height: 80px;
+        width: 100vw;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 3px 3px 3px rgba(136,136,136, 0.5   );
+    }
+    .header Button {
+        margin: 120px;
+    }
+    .logoanchor > img {
+        margin: 120px;
+        width: 25%;
+    }
+    .logoanchor {
+        width: 20%;
+    }
 
 /*****GENERAL*****/
 .inside-styles-90 {
@@ -276,7 +276,6 @@
 }
 
 @media (max-width: 480px) {
-
     .header {
         position: fixed;
         z-index: 1;
@@ -299,7 +298,6 @@
     .logoanchor {
         width: 20%;
     }
-
     .shadow {
         height: 100vh;
         width: 100vw;
@@ -431,11 +429,6 @@
     .icon {
         font-size: 1rem;
     }
-
-
-
-
-
     .h1-diuri {
         margin-bottom: 30px;
         color: white;
@@ -461,6 +454,156 @@
     }
     .h5-diuri {
         font-size: 1.1rem;
+        text-align: justify;
+    }
+    .h6-diuri {
+        font-size: 1.1rem;
+        text-align: justify;
+    }
+    .span-diuri {
+        color: white;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 320px) {
+
+    .header Button {
+        margin: 20px;
+    }
+    .logoanchor > img {
+        margin: 30px;
+        width: 90%;
+    }
+    .logoanchor {
+        width: 20%;
+    }
+    .parallax .inside-styles-90 > img {
+        margin-top: 50px;
+    }
+    .shadow img {
+        margin-bottom: 20px;
+        width: 35%;
+    }
+    .second-section {
+        width: 90vw;
+        height: 75vh;
+        margin-top: 70px;
+    }
+    .inside-styles-50 {
+        width: 90vw;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .second-section .h3-diuri {
+        margin-bottom: 30px;
+    }
+    .second-section iframe {
+        margin-top: 10px;
+        width: 560px;
+        height: 315px;
+    }
+    .third-section {
+        width: 90vw;
+        height: 250vh;
+        margin-top: 70px
+    }
+    .fourth-section {
+        margin-top: 70px;
+        width: 90vw;
+        height: 170vh;
+    }
+    .bliss {
+        width: 70%;
+        border-radius: 50%;
+        margin-bottom: 50px;
+    }
+    .fifth-section {
+        width: 90vw;
+        height: 130vh;
+        margin-top: 70px;
+    }
+    .fifth-section .h3-diuri {
+        margin-bottom: 50px;
+    }
+    .fifth-section video {
+        margin-top: 0;
+        width: 80vw;
+        height: 250px;
+    }
+    .sixth-section {
+        width: 90vw;
+        height: 30vh;
+    }
+    .footer .h4-diuri {
+        color: white;
+        font-size: 1rem;
+    }
+    .footer {
+        text-align: left !important;
+        padding:2% 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #2D354C;;
+        flex-wrap: wrap;
+        flex-direction: column;
+        color: #2DC5FA;
+    }
+    .footer > div {
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 25%;
+        text-align: center;
+    }
+    .footer div div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .footer div:nth-child(1) div {
+        margin-top: 10px;
+        flex-direction: row;
+    }
+    .footer a {
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+        font-size: 0.8rem;
+    }
+    .icon {
+        font-size: 1rem;
+        margin-right: 5px;
+    }
+    .h1-diuri {
+        margin-bottom: 30px;
+        color: white;
+        font-size: 1.6rem;
+        font-weight: bold;
+        font-family: "Gotham titles";
+    }
+    .h2-diuri {
+        color: white;
+        font-family: "Gotham subtitles";
+        line-height: 1.5em;
+        font-size: 1rem;
+    }
+    .h3-diuri {
+        color: #2DC5FA;
+        font-family: "Gotham titles";
+        font-size: 1.5rem;
+    }
+    .h4-diuri {
+        color: black;
+        font-family: "Gotham subtitles";
+        font-size: 1.4rem;
+    }
+    .h5-diuri {
+        font-size: 1rem;
         text-align: justify;
     }
     .h6-diuri {
