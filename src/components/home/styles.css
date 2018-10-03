@@ -260,15 +260,162 @@
 
 /*****MEDIA QUERIES****/
 @media (max-width: 990px) {
-
-    .parallax .inside-styles-90 > img {
-        margin-top: 100px;
+    .h1-diuri {
+        margin-bottom: 30px;
+        color: white;
+        font-size: 2.2rem;
+        font-weight: bold;
+        font-family: "Gotham titles";
     }
+    .h2-diuri {
+        color: white;
+        font-family: "Gotham subtitles";
+        line-height: 1.5em;
+    }
+    .h3-diuri {
+        color: #2DC5FA;
+        font-family: "Gotham titles";
+        font-size: 1.9rem;
+    }
+    .h4-diuri {
+        color: black;
+        font-family: "Gotham subtitles";
+        font-size: 1.4rem;
+    }
+    .h5-diuri {
+        font-size: 1.1rem;
+        text-align: justify;
+    }
+    .h6-diuri {
+        font-size: 1.1rem;
+        text-align: justify;
+    }
+    .span-diuri {
+        color: white;
+        font-size: 1.2rem;
+    }
+    .header {
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        height: 80px;
+        width: 100vw;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 3px 3px 3px rgba(136,136,136, 0.5   );
+    }
+    .header Button {
+        margin: 70px;
+    }
+    .logoanchor > img {
+        margin: 50px;
+        width: 35%;
+    }
+    .logoanchor {
+        width: 20%;
+    }
+    .shadow {
+        height: 85vh;
+        width: 100vw;
+        background-color: rgba(0,0,0,.7);
+        margin-top: 50px;
+    }
+    .shadow img {
+        margin-bottom: 50px;
+        width: 15%;
+    }
+    .desc-points {
+        margin-top: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .button-first-page {
+        margin-top: 70px;
+        height: 50px;
+    }
+    .parallax .inside-styles-90 > img {
+        margin-top: 20px;
+    }
+    .desc-points {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-grow: 1;
+        flex-wrap: wrap;
+    }
+    .shadow span {
+        margin-top: 30px;
+    }
+    .second-section {
+        width: 90vw;
+        height: 70vh;
+        margin-top: 50px;
+    }
+    .inside-styles-50 {
+        width: 90vw;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .second-section .h3-diuri {
+        margin-bottom: 50px;
+    }
+    .third-section {
+        width: 90vw;
+        height: 170vh;
+        margin-top: 50px
+    }
+    .third-section .desc-3 {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-grow: 1;
+    }
+    .fourth-section {
+        margin-top: 70px;
+        width: 90vw;
+        height: 110vh;
+    }
+    .fourth-section .h3-diuri {
+        margin-bottom: 50px;
+    }
+    .fourth-section .h5-diuri {
+        margin-top: 30px;
+    }
+    .fourth-section .h4-diuri {
+        margin-bottom: 30px;
+    }
+    .bliss {
+        width: 30%;
+        border-radius: 50%;
+        margin-bottom: 50px;
+    }
+    .fifth-section {
+        width: 90vw;
+        height: 100vh;
+        margin-top: 120px;
+    }
+    .fifth-section .h3-diuri {
+        margin-bottom: 50px;
+    }
+    .fifth-section video {
+        margin-top: 50px;
+        width: 80vw;
+        height: 500px;
+    }
+
 
 }
 
 @media (max-width: 768px) {
-
     .header {
         position: fixed;
         z-index: 1;
@@ -723,8 +870,3 @@
         font-size: 0.8rem;
     }
 }
-
-
-
-
-
