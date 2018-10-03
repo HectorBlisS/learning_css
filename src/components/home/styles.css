@@ -261,10 +261,6 @@
 /*****MEDIA QUERIES****/
 @media (max-width: 990px) {
 
-    .parallax > div:nth-child(1) {
-        height: 100vh;
-    }
-
     .parallax .inside-styles-90 > img {
         margin-top: 100px;
     }
@@ -272,6 +268,119 @@
 }
 
 @media (max-width: 768px) {
+
+    .header {
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        height: 80px;
+        width: 100vw;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 3px 3px 3px rgba(136,136,136, 0.5);
+    }
+    .header Button {
+        margin: 40px;
+    }
+    .logoanchor > img {
+        margin: 20px;
+        width: 45%;
+    }
+    .logoanchor {
+        width: 20%;
+    }
+    .parallax .inside-styles-90 > img {
+        margin-top: 50px;
+    }
+    .shadow {
+        height: 90vh;
+        width: 100vw;
+        background-color: rgba(0,0,0,.7);
+        margin-top: 5px;
+    }
+    .shadow img {
+        margin-bottom: 30px;
+        width: 20%;
+    }
+    .desc-points {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-grow: 1;
+        flex-wrap: wrap;
+    }
+    .shadow span {
+        margin-top: 30px;
+    }
+    .button-first-page {
+        margin-top: 50px;
+        height: 50px;
+    }
+    .second-section {
+        width: 90vw;
+        height: 80vh;
+        margin-top: 50px;
+    }
+    .inside-styles-50 {
+        width: 90vw;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .second-section .h3-diuri {
+        margin-bottom: 50px;
+    }
+    .third-section {
+        width: 90vw;
+        height: 170vh;
+        margin-top: 50px
+    }
+    .third-section .desc-3 {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-grow: 1;
+    }
+    .fourth-section {
+        margin-top: 70px;
+        width: 90vw;
+        height: 110vh;
+    }
+    .fourth-section .h3-diuri {
+        margin-bottom: 50px;
+    }
+    .fourth-section .h5-diuri {
+        margin-top: 30px;
+    }
+    .fourth-section .h4-diuri {
+        margin-bottom: 30px;
+    }
+    .bliss {
+        width: 35%;
+        border-radius: 50%;
+        margin-bottom: 50px;
+    }
+    .fifth-section {
+        width: 90vw;
+        height: 100vh;
+        margin-top: 50px;
+    }
+    .fifth-section .h3-diuri {
+        margin-bottom: 50px;
+    }
+    .fifth-section video {
+        margin-top: 50px;
+        width: 80vw;
+        height: 300px;
+    }
+
 
 }
 
@@ -467,7 +576,6 @@
 }
 
 @media (max-width: 320px) {
-
     .header Button {
         margin: 20px;
     }
@@ -614,7 +722,6 @@
         color: white;
         font-size: 0.8rem;
     }
-
 }
 
 
