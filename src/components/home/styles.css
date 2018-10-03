@@ -2,6 +2,30 @@
     text-align: center;
 }
 
+.shadow {
+    height: 85vh;
+    width: 100vw; 
+    background-color: rgba(0,0,0,.7); 
+    margin-top: 50px;
+}
+
+.shadow img {
+    margin-bottom: 50px;
+    width: 10%;
+}
+
+.desc-points {
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.button-first-page {
+    margin-top: 70px;
+    height: 50px;
+}
+
 .inside-styles-90 {
     width: 90vw;
     position: absolute;
@@ -26,7 +50,91 @@
     transform: translate(-50%,-50%);
 }
 
+.second-section {
+    width: 90vw;
+    height: 50vh;
+    margin-top: 70px;
+}
+
+.second-section .h3-diuri {
+    margin-bottom: 30px;
+}
+
+.second-section iframe {
+    margin-top: 50px;
+    width: 560px;
+    height: 315px;
+}
+
+.third-section {
+    width: 90vw;
+    height: 80vh;
+    margin-top: 50px;
+}
+
+.third-section .desc-3 {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.fourth-section {
+    margin-top: 30px;
+    width: 90vw;
+    height: 90vh;
+}
+
+.fourth-section .h3-diuri {
+    margin-bottom: 50px;
+}
+
+.fourth-section .h5-diuri {
+    margin-top: 30px;
+}
+
+.fifth-section {
+    width: 90vw;
+    height: 80vh;
+    margin-top: 100px;
+}
+
+.fifth-section .h3-diuri {
+    margin-bottom: 50px;
+}
+
+.fifth-section video {
+    margin-top: 60px;
+    width: 600px;
+    height: 315px;
+}
+
+.sixth-section {
+    width: 90vw;
+    height: 30vh;
+}
+
+.sixth-section a {
+    text-decoration: none;
+}
+
+.footer .h4-diuri {
+    color: white;
+}
+
+.bliss {
+    width: 20%;
+    border-radius: 50%;
+    margin-bottom: 50px;
+}
+
+.fourth-section  .h4-diuri {
+    margin-bottom: 50px;
+}
+
 .h1-diuri {
+    margin-bottom: 30px;
     color: white;
     font-size: 2.5rem;
     font-weight: bold;
@@ -176,3 +284,29 @@
 .icons-svg {
     margin-bottom: 50px;
 }
+
+
+@media (max-width: 990px) {
+
+    .parallax > div:nth-child(1) {
+        height: 100vh;
+    }
+
+    .parallax .inside-styles-90 > img {
+        margin-top: 100px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 480px) {
+
+
+
+}
+
+
+
