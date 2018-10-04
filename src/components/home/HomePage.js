@@ -5,7 +5,7 @@ import layer from '../../assets/Screen Shot 2018-09-18 at 16.53.00.png';
 import white from '../../assets/finalfinal.jpg';
 import bliss from '../../assets/blissiimg.gif';
 import {LoginModal} from "./Modal";
-import firebase, {facebookLogin, googleLogin, redirectedUser} from "../../services/firebase";
+import firebase, {facebookLogin, googleLogin, redirectedUser, saveEmail} from "../../services/firebase";
 import {CssIcon, JsIcon, SvgIcon} from './icons'
 import swal from 'sweetalert';
 
@@ -13,7 +13,9 @@ class HomePage extends Component {
 
   state = {
     visible: false,
-    loading:true
+    loading:true,
+    email:null,
+    error:false
   };
 
   componentWillMount(){
@@ -37,8 +39,27 @@ class HomePage extends Component {
   };
 
   handleSubmit = () => {
-    swal("¡Gracias!", "Nos pondremos en contacto contigo cuando lancemos el curso.", "success");
+    const {email} =  this.state
+    if(!email || !email.includes('@') || email.includes(' ')){
+      this.setState({error:true})
+    }else{
+      this.setState({error:false})
+      saveEmail(email)
+      .then(()=>{
+        this.setState({visible:false})
+        swal("¡Gracias!", "Nos pondremos en contacto contigo cuando lancemos el curso.", "success");
+      })
+      .catch(e=>{
+        this.setState({visible:false})
+        swal("!Algo pasó¡", "No pudimos guardar tu correo, intenta más tarde.", "error");
+      })
+    }
+    
   };
+
+  onEmailChange = (e) => {
+    this.setState({email:e.target.value})
+  }
 
   handleShow = () => {
     this.setState({visible:true})
@@ -210,7 +231,7 @@ class HomePage extends Component {
           </div>
         </div>
 
-        <LoginModal visible={visible} handleSubmit={this.handleSubmit} handleCancel={this.handleCancel} facebookLogin={this.loginWithFacebook} googleLogin={this.loginWithGoogle}/>
+        <LoginModal onEmailChange={this.onEmailChange} email={this.state.email} error={this.state.error} visible={visible} handleSubmit={this.handleSubmit} handleCancel={this.handleCancel} facebookLogin={this.loginWithFacebook} googleLogin={this.loginWithGoogle}/>
 
       </div>
     )

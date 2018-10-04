@@ -104,7 +104,7 @@ export const sendEncourageEmail = (uid) => {
   //   displayName
   // }
   //console.log(data)
-  return fetch(`https://us-central1-cursosonline-4b11c.cloudfunctions.net/middleCourse ?id=${uid}`,{
+  return fetch(`https://us-central1-cursosonline-4b11c.cloudfunctions.net/middleCourse?id=${uid}`,{
     method:"get",
     //body:JSON.stringify(data),
     headers:{
@@ -169,5 +169,10 @@ export const examNotApproved = (userId) => {
   })
   .then(res=>res.json())
   .then(message=>message)
+}
+
+//coming soon
+export const saveEmail = (email) => {
+  return db.collection('emails').doc(email).set({email})
 }
 
