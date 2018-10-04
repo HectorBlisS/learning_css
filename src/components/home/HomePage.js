@@ -50,6 +50,7 @@ class HomePage extends Component {
         swal("¡Gracias!", "Nos pondremos en contacto contigo cuando lancemos el curso.", "success");
       })
       .catch(e=>{
+        console.log(e)
         this.setState({visible:false})
         swal("!Algo pasó¡", "No pudimos guardar tu correo, intenta más tarde.", "error");
       })

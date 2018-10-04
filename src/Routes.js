@@ -5,6 +5,7 @@ import LoginPage from './components/login/LoginPage'
 import ProfilePage from './components/login/ProfilePage'
 import CourseViewer from './components/courses/CourseViewer'
 import ExamPage from './components/exam/ExamPage'
+import Dashboard from './components/admin/Dashboard';
 
 const Routes = () => (
   <Switch>
@@ -13,6 +14,7 @@ const Routes = () => (
     <Route path="/profile" component={ProfilePage} />
     <Route exact path="/course/:id/:slug" component={CourseViewer} />
     <Route path="/exam/:courseId" component={ExamPage} />
+    <Route path="/admin/bliss/pollollon" component={Dashboard} />
   </Switch>
 );
 
