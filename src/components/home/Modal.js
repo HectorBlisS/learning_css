@@ -1,7 +1,7 @@
 import React from 'react';
-import { Modal,  Input, Divider, Icon, Button} from 'antd';
+import { Modal,  Input, Form, Button} from 'antd';
 
-export const LoginModal = ({visible, handleCancel, handleSubmit, facebookLogin, googleLogin}) => (
+export const LoginModal = ({email, onEmailChange, error, visible, handleCancel, handleSubmit, facebookLogin, googleLogin}) => (
 
   <div>
     <Modal style={{textAlign: 'center'}} footer={null} title="Regístrate" visible={visible} onCancel={handleCancel}>
@@ -16,7 +16,13 @@ export const LoginModal = ({visible, handleCancel, handleSubmit, facebookLogin, 
       </div>*/}
 
          <p>Déjanos tu correo y sé de los primeros en tomar este curso</p>
-      <Input type='email' placeholder='Email'/>
+      <Form.Item
+        validateStatus={error ? "error":"success"}
+        help={error && <span style={{color:"red"}} >Introduce un correo electrónico válido</span>}
+      >
+        <Input value={email} onChange={onEmailChange} name="email" error={error} type='email' placeholder='Email'/>
+      </Form.Item>
+     
         <Button onClick={handleSubmit} style={{marginTop: 30}} type='primary'> Enviar </Button>
     </Modal>
   </div>
