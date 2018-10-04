@@ -104,7 +104,7 @@ export const sendEncourageEmail = (uid) => {
   //   displayName
   // }
   //console.log(data)
-  return fetch('https://us-central1-cursosonline-4b11c.cloudfunctions.net/middleCourse' + `?id=${uid}`,{
+  return fetch(`https://us-central1-cursosonline-4b11c.cloudfunctions.net/middleCourse ?id=${uid}`,{
     method:"get",
     //body:JSON.stringify(data),
     headers:{
@@ -123,7 +123,7 @@ export const courseDoneEmail = (email, displayName) => {
   //   displayName
   // }
   //console.log(data)
-  return fetch('https://us-central1-cursosonline-4b11c.cloudfunctions.net/finalCourse' + `?email=${email}&displayName=${displayName}`,{
+  return fetch(`https://us-central1-cursosonline-4b11c.cloudfunctions.net/finalCourse?email=${email}&displayName=${displayName}`,{
     method:"get",
     //body:JSON.stringify(data),
     headers:{
@@ -142,7 +142,7 @@ export const examApproved = (userId) => {
   //   displayName
   // }
   //console.log(data)
-  return fetch('https://us-central1-cursosonline-4b11c.cloudfunctions.net/examApproved' + `?uid=${userId}`,{
+  return fetch(`https://us-central1-cursosonline-4b11c.cloudfunctions.net/examApproved?uid=${userId}`,{
     method:"post",
     //body:JSON.stringify(data),
     headers:{
@@ -160,7 +160,7 @@ export const examNotApproved = (userId) => {
   //   displayName
   // }
   //console.log(data)
-  return fetch('https://us-central1-cursosonline-4b11c.cloudfunctions.net/examNotApproved' + `?uid=${userId}`,{
+  return fetch(`https://us-central1-cursosonline-4b11c.cloudfunctions.net/examNotApproved?uid=${userId}`,{
     method:"post",
     //body:JSON.stringify(data),
     headers:{

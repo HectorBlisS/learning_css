@@ -61,7 +61,7 @@ class CourseCard extends React.Component{
                         }}
                     title={title}
                     extra={<div><Icon type="link" /> 
-                        <div className="fb-share-button" data-href="https://learning.ironhack.com.mx" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flearning.ironhack.com.mx%2F&amp;src=sdkpreparse" className="fb-xfbml-parse-ignore" hashtag="#IronhackMEX" >Compartir</a></div>
+                        <div className="fb-share-button" data-href="https://learning.ironhack.com.mx" data-layout="button" data-size="large" data-mobile-iframe="true"><a rel="noopener noreferrer" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flearning.ironhack.com.mx%2F&amp;src=sdkpreparse" className="fb-xfbml-parse-ignore" hashtag="#IronhackMEX" >Compartir</a></div>
                      </div>}
                 >
                 <div>

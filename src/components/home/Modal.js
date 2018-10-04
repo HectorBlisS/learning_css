@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal,  Input, Divider, Icon, Button} from 'antd';
+import { Modal, Input, Button} from 'antd';
 
 export const LoginModal = ({visible, handleCancel, handleSubmit, facebookLogin, googleLogin}) => (
 

@@ -4,28 +4,28 @@
 }
 
 /*****HEADER*****/
-    .header {
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        height: 80px;
-        width: 100vw;
-        background: white;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        box-shadow: 3px 3px 3px rgba(136,136,136, 0.5   );
-    }
-    .header Button {
-        margin: 120px;
-    }
-    .logoanchor > img {
-        margin: 120px;
-        width: 25%;
-    }
-    .logoanchor {
-        width: 20%;
-    }
+.header {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    height: 80px;
+    width: 100vw;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 3px 3px 3px rgba(136,136,136, 0.5   );
+}
+.header Button {
+    margin: 120px;
+}
+.logoanchor > img {
+    margin: 120px;
+    width: 25%;
+}
+.logoanchor {
+    width: 20%;
+}
 
 /*****GENERAL*****/
 .inside-styles-90 {
@@ -167,6 +167,7 @@
 }
 .fifth-section video {
     margin-top: 60px;
+    margin-bottom: 100px;
     width: 600px;
     height: 315px;
 }
@@ -736,13 +737,16 @@
     .parallax .inside-styles-90 > img {
         margin-top: 50px;
     }
+    .shadow {
+        height: 100vh;
+    }
     .shadow img {
         margin-bottom: 20px;
         width: 35%;
     }
     .second-section {
         width: 90vw;
-        height: 75vh;
+        height: 100vh;
         margin-top: 70px;
     }
     .inside-styles-50 {
@@ -835,8 +839,9 @@
         margin-right: 5px;
     }
     .h1-diuri {
-        margin-bottom: 30px;
+        margin-bottom: 42px;
         color: white;
+        line-height: normal;
         font-size: 1.6rem;
         font-weight: bold;
         font-family: "Gotham titles";
@@ -866,6 +871,7 @@
         text-align: justify;
     }
     .span-diuri {
+        display: none;
         color: white;
         font-size: 0.8rem;
     }
