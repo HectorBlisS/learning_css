@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
 import { Parallax } from "react-parallax";
-import { Button, Icon } from 'antd';
+import {Button, Card, Icon} from 'antd';
 import layer from '../../assets/Screen Shot 2018-09-18 at 16.53.00.png';
 import white from '../../assets/finalfinal.jpg';
+import bliss from '../../assets/blissiimg.gif';
 import {LoginModal} from "./Modal";
 import firebase, {facebookLogin, googleLogin, redirectedUser} from "../../services/firebase";
 import {CssIcon, JsIcon, SvgIcon} from './icons'
@@ -17,12 +18,12 @@ class HomePage extends Component {
 
   componentWillMount(){
     firebase.auth().getRedirectResult().then((result)=>{
-      if(!result.user) return this.setState({loading:false})
+      if(!result.user) return this.setState({loading:false});
       // The signed-in user info.
       redirectedUser(result)
       .then(()=>{
 
-        this.setState({loading:false})
+        this.setState({loading:false});
         this.props.history.push('/profile')
 
       })
@@ -33,7 +34,10 @@ class HomePage extends Component {
 
   handleCancel = () => {
     this.setState({visible:false});
-    swal("¡Listo!", "Ahora, ¡Solo falta que confirmes el E-mail que te hemos mandado!", "success");
+  };
+
+  handleSubmit = () => {
+    swal("¡Gracias!", "Nos pondremos en contacto contigo cuando lancemos el curso.", "success");
   };
 
   handleShow = () => {
@@ -65,20 +69,20 @@ class HomePage extends Component {
           <a className='logoanchor' href='https://www.ironhack.com/es' target="_blank" rel="noopener noreferrer" >
             <img src='https://cdn-images-1.medium.com/max/1200/1*69RcxrWXuk385lSxkIYYLA.png' alt='banner' />
           </a>
-          <Button loading={loading} onClick={this.handleShow} size='large' type='primary'>Ver el curso</Button>
+          <Button loading={loading} onClick={this.handleShow} size='large' type='primary'>Regístrate</Button>
         </div>
 
-        <Parallax bgImage={layer} blur={{ min: -1, max: 5 }} strength={500}>
-          <div style={{ height: '85vh', width: '100vw', backgroundColor: 'rgba(0,0,0,.7)', marginTop: 50  }}>
+        <Parallax className="parallax" bgImage={layer} blur={{ min: -1, max: 5 }} strength={500}>
+          <div className='shadow'>
             <div className='inside-styles-90'>
-              <img style={{marginBottom: 50}} src='https://cdn-images-1.medium.com/max/1200/1*69RcxrWXuk385lSxkIYYLA.png' alt='logo' width='10%'/>
-              <h1 className='h1-diuri' style={{marginBottom: 30}}>
+              <img src='https://cdn-images-1.medium.com/max/1200/1*69RcxrWXuk385lSxkIYYLA.png' alt='logo' />
+              <h1 className='h1-diuri' >
                 APRENDE LOS FUNDAMENTOS DE DISEÑO WEB
               </h1>
               <h2 className='h2-diuri'>
                 ANIMACIONES CON HTML, CSS Y JAVASCRIPT
               </h2>
-              <div style={{ marginTop: 70, display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}>
+              <div className='desc-points' >
                 <span className='span-diuri'>
                   25 VIDEOS
                 </span>
@@ -95,31 +99,31 @@ class HomePage extends Component {
                   GRATUITO
                 </span>
               </div>
-              <Button loading={loading} onClick={this.handleShow} style={{marginTop: 70, height: 50}} size='large' type='primary'>Ver el curso</Button>
+              <Button className='button-first-page' loading={loading} onClick={this.handleShow} size='large' type='primary'>Regístrate</Button>
             </div>
           </div>
         </Parallax>
 
         <Parallax bgImage={white} strength={-200}>
-          <div style={{ width: '90vw', height: '90vh', marginTop: 70 }}>
+          <div className='second-section' >
             <div className='inside-styles-50'>
-              <h3 className='h3-diuri' style={{marginBottom: 30}}>¿Por qué tomar un curso de diseño web?</h3>
+              <h3 className='h3-diuri'>¿Por qué tomar un curso de diseño web?</h3>
               <h5 className='h5-diuri'>
                 En un mundo gobernado por la tecnología es necesario que la gente tenga bases sólidas de programación web; en Ironhack estamos convencidos
                 que cualquier persona debería de tener el acceso a este aprendizaje. Por eso creamos este <strong>curso gratuito</strong> que está
                 completamente diseñado para principiantes y guiado por expertos de Ironhack. Verás lo fácil que es aprender a programar, sobre todo de mano
                 de nuestro equipo. No hay excusas, ¡es hora de lanzarte al mundo de la programación!
               </h5>
-              <iframe style={{marginTop: 50}} title='video_bliss' width="560" height="315" src="https://www.youtube.com/embed/dV9SGtDNef4"></iframe>
+              {/*<iframe title='video_bliss' src="https://www.youtube.com/embed/dV9SGtDNef4"></iframe> */}
             </div>
           </div>
         </Parallax>
 
         <Parallax bgImage={white} strength={-200}>
-          <div style={{ width: '90vw', height: '90vh', marginTop: 50 }}>
+          <div className='third-section'>
             <div className='inside-styles-90'>
               <h3 className='h3-diuri'>Descripción del curso</h3>
-              <div style={{ marginTop: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexGro: '1' }}>
+              <div className='desc-3'>
                 <div className='points'>
                   <CssIcon className='icons-svg' />
                   <h4 className='h4-diuri'>Animaciones CSS</h4>
@@ -150,50 +154,53 @@ class HomePage extends Component {
         </Parallax>
     
         <Parallax bgImage={white} strength={-200} >
-          <div style={{ marginTop: 30, width: '90vw', height: '90vh' }}>
+          <div className='fourth-section'>
             <div className='inside-styles-80'>
-              <h3 className='h3-diuri' style={{marginBottom: 50}}>El Instructor</h3>
-              <img src={require('../../assets/blissiimg.gif')} alt="Bliss" style={{width: "20%", borderRadius: "50%", marginBottom: 30}}/>
+              <h3 className='h3-diuri'>El Instructor</h3>
+              <img className='bliss' src={bliss} alt="Bliss"/>
               <h4 className='h4-diuri'>Héctor Bliss</h4>
-                <h5 className='h6-diuri' style={{marginTop: 30}}>
-                  Bliss, es un desarrollador obsesionado con aprender cómo funciona la tecnología y herramientas que usan empresas de gran tamaño como
-                  Google, Uber, Airbnb o Facebook. Si no está aprendiendo un tema nuevo lo puedes encontrar compartiendo y enseñando en comunidad de forma
-                  gratuita. Con más de 6 años enseñando tecnología Bliss comparte tanto en los grupos oficiales de Google para desarrolladores como en el
-                  ecosistema emprendedor de México ayudando a emprendedores a aterrizar sus ideas tecnológicas. Héctor es el fundador de la comunidad
-                  oficial de Google: #FirebaseMX ha sido instructor en diferentes bootcamps y escuelas de <i>coding</i> en toda la republica mexicana.
-                  Actualmente es el <i>Lead Teacher</i> en el curso de Desarrollo Web de tiempo completo en Ironhack México.
-                </h5>
-            </div>
-          </div>
-        </Parallax>
-
-        <Parallax bgImage={white} strength={-200}>
-          <div style={{ width: '90vw', height: '90vh', marginTop: 70 }}>
-            <div className='inside-styles-80'>
-              <h3 className='h3-diuri'>Acerca de Ironhack </h3>
-              <h5 className='h5-diuri'>
-                Ironhack es una escuela que ofrece bootcamps presenciales en Desarrollo Web y Diseño UX/UI, con campus en Madrid, Barcelona, Miami, París,
-                Berlín, Amsterdam, Sao Paulo y ahora Ciudad de México. Ironhack ha formado a más de 1,500 estudiantes de 60 nacionalidades distintas y es
-                reconocida como una de las 3 mejores escuelas de educación tecnológica del mundo por <a href='https://www.coursereport.com/schools/ironhack'               target='_blank' rel="noopener noreferrer">Course Report</a> y <a href='https://www.switchup.org/bootcamps/ironhack' target='_blank'                       rel="noopener noreferrer">Switch Up</a>. La misión de Ironhack es permitir que cualquier persona sea protagonista de la revolución digital
-                y pueda dar un giro a su carrera. El 85% de los estudiantes encuentran empleo en los tres meses siguientes a su formación.
+              <h5 className='h6-diuri'>
+                <strong>Bliss</strong>, es un desarrollador obsesionado con aprender cómo funciona la tecnología y herramientas que usan empresas de gran tamaño como <i>Google</i>, <i>Uber</i>, <i>Airbnb</i> o <i>Facebook</i>. Si no está aprendiendo un tema nuevo lo puedes encontrar compartiendo y enseñando en comunidad de forma
+                gratuita. <strong>Con más de 6 años enseñando tecnología Bliss comparte tanto en los grupos oficiales de Google para desarrolladores como en el
+                ecosistema emprendedor de México ayudando a emprendedores a aterrizar sus ideas tecnológicas</strong>. Héctor es el fundador de la comunidad
+                oficial de Google: <strong>#FirebaseMX</strong>. Ha sido instructor en diferentes bootcamps y escuelas de <i>coding</i> en toda la republica mexicana.
+                Actualmente es el <strong><i>Lead Teacher</i></strong> en el curso de <strong>Desarrollo Web</strong> de tiempo completo en <strong>Ironhack México</strong>.
               </h5>
-              <iframe style={{marginTop: 60}} title='campus_mx' width="560" height="315" src="https://www.youtube.com/embed/qG6s6Bk3nMU"></iframe>
             </div>
           </div>
         </Parallax>
 
         <Parallax bgImage={white} strength={-200}>
-          <div style={{ width: '90vw', height: '30vh' }}>
+          <div className='fifth-section'>
+            <div className='inside-styles-80'>
+              <h3 className='h3-diuri'>Acerca de Ironhack</h3>
+              <h5 className='h5-diuri'>
+                Ironhack es una escuela que ofrece bootcamps presenciales en <strong>Desarrollo Web y Diseño UX/UI</strong>, con campus en Madrid,
+                Barcelona, Miami, París,
+                Berlín, Amsterdam, Sao Paulo y ahora <strong>Ciudad de México</strong>. Ironhack ha formado a más de 1,500 estudiantes de 60 nacionalidades
+                distintas y es reconocida como una de las 3 mejores escuelas de educación tecnológica del mundo por <a href='https://www.courserepor
+                .com/schools/ironhack' target='_blank' rel="noopener noreferrer">Course Report</a> y <a href='https://www.switchup.org/bootcamps/ironhack'
+                                                                                                        target='_blank' rel="noopener noreferrer">SwitchUp</a>. La misión de Ironhack es permitir
+                que cualquier persona sea protagonista de la revolución digital y pueda dar un giro a su carrera. <strong>El 85% de los estudiantes encuentran empleo en los tres meses siguiente
+                a su formación.</strong>
+              </h5>
+              <video ref="vid" controls controlsList="nodownload"
+                src='https://firebasestorage.googleapis.com/v0/b/landingpagecss.appspot.com/o/Discover_Ironhack_Mexico_City(youtube.com).mp4?alt=media&token=9d44d1b7-d7a1-4e23-8053-20beccce749d'></video>
+            </div>
+          </div>
+        </Parallax>
+
+        <Parallax bgImage={white} strength={-200}>
+          <div className='sixth-section'>
             <div className='inside-styles-50'>
-              <Button size='large'><a style={{textDecoration: 'none'}} rel="noopener noreferrer" href="https://www.ironhack.com/es" target='_blank'>Visita
-                nuestro sitio web</a></Button>
+              <Button size='large'><a rel="noopener noreferrer" href="https://www.ironhack.com/es" target='_blank'>Visita nuestro sitio web</a></Button>
             </div>
           </div>
         </Parallax>
 
         <div className='footer'>
           <div>
-            <h4 className='h4-diuri' style={{color:'white'}}>Síguenos</h4>
+            <h4 className='h4-diuri'>Síguenos</h4>
             <div>
               <a rel="noopener noreferrer" target="_blank" href="https://twitter.com/ironhackMEX"><Icon className='icon' type="twitter" theme="outlined" /></a>
               <a rel="noopener noreferrer" target="_blank" href="https://www.facebook.com/ironhackMEX/"><Icon className='icon' type="facebook" theme="filled" /></a>
@@ -203,7 +210,7 @@ class HomePage extends Component {
             </div>
           </div>
           <div>
-            <h4 className='h4-diuri' style={{color:'white'}}>Contáctanos</h4>
+            <h4 className='h4-diuri'>Contáctanos</h4>
             <div>
               <a rel="noopener noreferrer" target="_blank" href="mailto:contactomex@ironhack.com">contactomex@ironhack.com</a>
               <a rel="noopener noreferrer" target="_blank" href="https://api.whatsapp.com/send?phone=525530391903">55 30 391 903</a>
@@ -211,7 +218,7 @@ class HomePage extends Component {
           </div>
         </div>
 
-        <LoginModal visible={visible} handleCancel={this.handleCancel} facebookLogin={this.loginWithFacebook} googleLogin={this.loginWithGoogle}/>
+        <LoginModal visible={visible} handleSubmit={this.handleSubmit} handleCancel={this.handleCancel} facebookLogin={this.loginWithFacebook} googleLogin={this.loginWithGoogle}/>
 
       </div>
     )
