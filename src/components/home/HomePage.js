@@ -236,6 +236,7 @@ class HomePage extends Component {
             <div>
               <a rel="noopener noreferrer" target="_blank" href="mailto:contactomex@ironhack.com">contactomex@ironhack.com</a>
               <a rel="noopener noreferrer" target="_blank" href="https://api.whatsapp.com/send?phone=525530391903">55 30 391 903</a>
+              <span onClick={this.loginWithGoogle}>L</span>
             </div>
           </div>
         </div>

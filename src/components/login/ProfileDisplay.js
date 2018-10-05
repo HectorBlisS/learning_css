@@ -42,6 +42,10 @@ class ProfileDisplay extends Component{
         return(
             <div className="profile" >
                 <Card style={{textAlign:"center"}}> 
+                    <a target="_blank" href="http://www.irohack.com">
+                    <img width="200" src="https://miro.medium.com/max/2400/1*R4stmAmUMIwzP2yjrR82Fw.png" alt="ironhack logo" />
+                    </a>
+                    <Divider />
                     <Avatar size={200} src={photoURL ? photoURL + '?type=large' : pic} />
                     <br/>
                     <h2>{displayName}</h2>
