@@ -129,7 +129,7 @@ class HomePage extends Component {
         <Parallax bgImage={white} strength={-200}>
           <div className='second-section' >
             <div className='inside-styles-50'>
-              <h3 className='h3-diuri'>¿Por qué tomar un curso de diseño web?</h3>
+              <h3 className='h3-diuri'>¿Por qué tomar un curso de Diseño Web?</h3>
               <h5 className='h5-diuri'>
                 En un mundo gobernado por la tecnología es necesario que la gente tenga bases sólidas de programación web; en Ironhack estamos convencidos
                 que cualquier persona debería de tener el acceso a este aprendizaje. Por eso creamos este <strong>curso gratuito</strong> que está
@@ -150,7 +150,7 @@ class HomePage extends Component {
                   <CssIcon className='icons-svg' />
                   <h4 className='h4-diuri'>Animaciones CSS</h4>
                   <h5 className='h5-diuri'>
-                    Aprenderás a crear animaciones solo con css. Utilizaremos atributos básicos como <i>transition</i> para animaciones básicas hasta crear
+                    Aprenderás a crear animaciones solo con CSS. Utilizaremos atributos básicos como <i>transition</i> para animaciones básicas hasta crear
                     keyframes para crear animaciones reutilizables 2D y 3D
                   </h5>
                 </div>
@@ -181,7 +181,7 @@ class HomePage extends Component {
               <h3 className='h3-diuri'>El Instructor</h3>
               <img className='bliss' src={bliss} alt="Bliss"/>
               <h4 className='h4-diuri'>Héctor Bliss</h4>
-              <h5 className='h6-diuri'>
+              <h5 className='h5-diuri'>
                 <strong>Bliss</strong>, es un desarrollador obsesionado con aprender cómo funciona la tecnología y herramientas que usan empresas de gran tamaño como <i>Google</i>, <i>Uber</i>, <i>Airbnb</i> o <i>Facebook</i>. Si no está aprendiendo un tema nuevo lo puedes encontrar compartiendo y enseñando en comunidad de forma
                 gratuita. <strong>Con más de 6 años enseñando tecnología Bliss comparte tanto en los grupos oficiales de Google para desarrolladores como en el
                 ecosistema emprendedor de México ayudando a emprendedores a aterrizar sus ideas tecnológicas</strong>. Héctor es el fundador de la comunidad
@@ -208,14 +208,6 @@ class HomePage extends Component {
               </h5>
               <video ref="vid" controls controlsList="nodownload"
                 src='https://firebasestorage.googleapis.com/v0/b/landingpagecss.appspot.com/o/Discover_Ironhack_Mexico_City(youtube.com).mp4?alt=media&token=9d44d1b7-d7a1-4e23-8053-20beccce749d'></video>
-            </div>
-          </div>
-        </Parallax>
-
-        <Parallax bgImage={white} strength={-200}>
-          <div className='sixth-section'>
-            <div className='inside-styles-50'>
-              <Button size='large'><a rel="noopener noreferrer" href="https://www.ironhack.com/es" target='_blank'>Visita nuestro sitio web</a></Button>
             </div>
           </div>
         </Parallax>
