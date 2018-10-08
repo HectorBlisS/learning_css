@@ -62,10 +62,10 @@ class ProfilePage extends Component{
             validated = false
             errors.email = "Escribe un email valido"
         }
-        if(!user.phoneNumber || user.phoneNumber.length < 10 ){
-            validated = false
-            errors.phoneNumber = "Tu teléfono debe tener 10 digitos"
-        }
+        // if(!user.phoneNumber || user.phoneNumber.length < 10 ){
+        //     validated = false
+        //     errors.phoneNumber = "Tu teléfono debe tener 10 digitos"
+        // }
         //return result
         this.setState({errors})
         return validated

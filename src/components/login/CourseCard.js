@@ -6,7 +6,10 @@ import * as jsPDF from 'jspdf'
 
 // const vid = "https://firebasestorage.googleapis.com/v0/b/cursosonline-4b11c.appspot.com/o/courses%2Fanimations-css%2Fmodule1%2FAnimaciones3.1.mp4?alt=media&token=2ef60c65-f2c3-4d6d-ab88-5e769c5ababb"
 
-const img = "http://cssdude.com/wp-content/uploads/2016/07/css3animation.jpg"
+//const img = "http://cssdude.com/wp-content/uploads/2016/07/css3animation.jpg"
+//const img = "https://www.balticstorm.org/b/2018/09/random-pattern-generator-tile-18-background-css-pattern-generators.jpg"
+import img from "../../assets/banner.png"
+
 
 class CourseCard extends React.Component{
 
@@ -47,13 +50,13 @@ class CourseCard extends React.Component{
 
     render(){
         const {disabled} = this.state
-        const {id=0,slug="animaciones-css",title="Animaciones CSS"} = this.props
+        const {id=0,slug="animaciones-css",title="ANIMACIONES CON HTML, CSS Y JAVASCRIPT"} = this.props
     return(
         <div style={{flex:1}} >
         
             
                 <Card 
-                    cover={<img src={img} alt="css" />}
+                    cover={<img style={{filter:"grayscale(100%)"}} src={img} alt="css" />}
                     hoverable
                     style={{
                         cursor:"pointer",
@@ -66,10 +69,8 @@ class CourseCard extends React.Component{
                 >
                 <div>
                 <strong>
-                    Aprende a crear animaciones CSS 2D, 3D y SVG. Diseña tus proyectos con atractivos efectos espectaculares
-                    que deleiten a tus usuarios y te separen de los diseñadores web promedio.
-                    Este curso tiene un modulo opcional en el que aprenderás a utilizar JavaScript con jQuery
-                    para activar y desactivar clases y estilos css y aplicar animaciones con interactividad.
+                Aprenderás a crear animaciones solo con css. Utilizaremos atributos básicos como transition para animaciones básicas hasta crear keyframes para crear animaciones reutilizables 2D y 3D, también aprenderás a utilizar JavaScript en conjunto de CSS para crear animaciones más complejas y crear interactividad con el usuario. También entenderás cómo usar jQuery de una manera amena y sencilla.
+                Como contenido bonus aprenderás qué es una imágen SVG. Crearemos una a mano para explorar esta tecnología y la manipularás con CSS para crear animaciones increíbles para tus proyectos.
                 </strong>
                 </div>
 
@@ -84,7 +85,7 @@ class CourseCard extends React.Component{
                     type="primary"
                     style={{float:'right'}}
                 >
-                    Ver el curso
+                    Iniciar el curso
                 </Button>
                 </Link>
                 { disabled ? <Tooltip title="Recuerda que para descargar tu certificado, primero debes aprobar el examen">

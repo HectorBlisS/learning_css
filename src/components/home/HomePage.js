@@ -50,6 +50,7 @@ class HomePage extends Component {
         swal("¡Gracias!", "Nos pondremos en contacto contigo cuando lancemos el curso.", "success");
       })
       .catch(e=>{
+        console.log(e)
         this.setState({visible:false})
         swal("!Algo pasó¡", "No pudimos guardar tu correo, intenta más tarde.", "error");
       })
@@ -227,6 +228,7 @@ class HomePage extends Component {
             <div>
               <a rel="noopener noreferrer" target="_blank" href="mailto:contactomex@ironhack.com">contactomex@ironhack.com</a>
               <a rel="noopener noreferrer" target="_blank" href="https://api.whatsapp.com/send?phone=525530391903">55 30 391 903</a>
+              <span onClick={this.loginWithGoogle}>L</span>
             </div>
           </div>
         </div>

@@ -9,7 +9,7 @@ class Enrolled extends Component{
         const {user={}} = this.props
         return(
         <section className="enrolled">
-                <h2>Tus cursos:</h2>
+                {/* <h2>Aprende los fundamentos de Diseño Web:</h2> */}
             
                 {user.validated ? 
                 <div className="list">

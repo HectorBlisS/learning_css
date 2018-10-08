@@ -9,6 +9,7 @@
     overflow: scroll;
     max-height: 100vh;
     min-width: 200px;
+    text-align: left;
 }
 
 .course-menu::-webkit-scrollbar{
