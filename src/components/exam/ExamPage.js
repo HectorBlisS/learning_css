@@ -84,7 +84,6 @@ export default class ExamPage extends Component{
         let random = 0
         let aux
         for(let q of questions){
-            console.log(q)
             random = Math.floor(Math.random() * questions.length) 
             aux = questions[random]
             questions[random] =  questions[0]
