@@ -15,7 +15,7 @@ export const LoginModal = ({email, onEmailChange, error, visible, handleCancel, 
         <p>Gmail</p>
       </div>*/}
 
-         <p>Déjanos tu correo y sé de los primeros en tomar este curso</p>
+         <p>Déjanos tu correo y sé de los primeros en enterarte del estreno</p>
       <Form.Item
         validateStatus={error ? "error":"success"}
         help={error && <span style={{color:"red"}} >Introduce un correo electrónico válido</span>}

@@ -2,6 +2,7 @@ import React from 'react'
 import {Card, Avatar, Button, Tooltip, Icon} from 'antd'
 import {Link} from 'react-router-dom'
 import * as jsPDF from 'jspdf'
+import bliss from '../../assets/blissiimg.gif'
 
 
 // const vid = "https://firebasestorage.googleapis.com/v0/b/cursosonline-4b11c.appspot.com/o/courses%2Fanimations-css%2Fmodule1%2FAnimaciones3.1.mp4?alt=media&token=2ef60c65-f2c3-4d6d-ab88-5e769c5ababb"
@@ -62,7 +63,7 @@ class CourseCard extends React.Component{
                         cursor:"pointer",
                         marginLeft:20
                         }}
-                    title={title}
+                    title={<h1>{title}</h1>}
                     extra={<div><Icon type="link" /> 
                         <div className="fb-share-button" data-href="https://learning.ironhack.com.mx" data-layout="button" data-size="large" data-mobile-iframe="true"><a rel="noopener noreferrer" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flearning.ironhack.com.mx%2F&amp;src=sdkpreparse" className="fb-xfbml-parse-ignore" hashtag="#IronhackMEX" >Compartir</a></div>
                      </div>}
@@ -75,7 +76,7 @@ class CourseCard extends React.Component{
                 </div>
 
                 <p style={{textAlign:"center", marginTop:50, width:200}}>
-                    <Avatar src="https://miro.medium.com/fit/c/240/240/0*jp3IFb08Sy3_k3N_." />
+                    <Avatar src={bliss} />
                     <span style={{marginLeft:20}} >By: Héctor BlisS</span>
                 </p>
                 {/* <video width="100" src={vid}></video> */}

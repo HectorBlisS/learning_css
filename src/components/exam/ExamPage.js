@@ -72,6 +72,7 @@ export default class ExamPage extends Component{
         current.keys = keys
         this.setState({current})
         this.reset()
+        // setTimeout(()=>this.setState({disabled:false}),1000)
     }
 
     doShuffle = (array) => {
@@ -98,28 +99,33 @@ export default class ExamPage extends Component{
 
     selected = (e) => {
         // console.log(e.target.value)
-        const answereId = e.target.value
+        const answereId = parseInt(e.target.value)
         const {current} = this.state
         const {questions} = this.state
         current.selected = answereId
         questions[current.id] = current
-        
         this.setState({current, questions})
+
+        //quitar el blur
+        e.target.blur()
 
     }
 
     doAnswere = () => {
         let {current, points, questions, order} = this.state
         if(current.selected === current.correct) points+=10
-        // console.log(points)
-        questions[current.id] = current
+        console.log(current)
+        console.log(points)
+        //questions[current.id] = current
         order.splice(order.indexOf(current.id), 1)
-        this.setState({questions, current, points, order}, ()=>this.downloadExam())
+        this.setState({current, points, order}, ()=>this.downloadExam())
+
+        // this.setState({disabled:true})
         
     }
 
     render(){
-        const {current, order} = this.state
+        const {current, order, disabled} = this.state
         const {keys} = current
         return(
             <div style={{marginTop:50, height:'100vh',display:'flex', justifyContent:'center'}}>
@@ -133,16 +139,19 @@ export default class ExamPage extends Component{
 
             {/* make this a component */}
             <h2>{current.question}</h2>
-            <Radio.Group buttonStyle="solid" onChange={this.selected} >
+            <Radio.Group buttonStyle="solid" >
 
                 {keys.map((key, i)=>{
                    return <Radio.Button 
                             style={{display:'block'}} 
                             key={i} 
                             value={current.options[key].id}
+                            onClick={this.selected}
+                          
                         >
                          {current.options[key].answere}
                     </Radio.Button>
+                // return <p><input name="lol" type="radio" value={current.options[key].id} /> {current.options[key].answere} </p>
                
                 })}
 

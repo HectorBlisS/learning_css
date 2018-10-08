@@ -83,7 +83,7 @@ class HomeContainer extends Component{
     const {visible, loading} = this.state;
     return (
       <div className='containerPage'>
-        <Header handleShow={this.handleShow} loading={loading}/>
+        {/* <Header handleShow={this.handleShow} loading={loading}/> */}
         <Title handleShow={this.handleShow} loading={loading}/>
         <WhyThisCourse/>
         <DescriptionCourse/>
