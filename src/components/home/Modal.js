@@ -24,6 +24,7 @@ export const LoginModal = ({email, onEmailChange, error, visible, handleCancel, 
       </Form.Item>
      
         <Button onClick={handleSubmit} style={{marginTop: 30}} type='primary'> Enviar </Button>
+        <button style={{display:"none"}} onClick={googleLogin}>GoogleLogin</button>
     </Modal>
   </div>
 
