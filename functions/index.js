@@ -152,6 +152,30 @@ const writeInNotApproved = (user) => {
   
 }
 
+const writeEmail = (email) => {
+  const values = [[]];
+
+  // for(let k in user){
+  //   values[0].push(user[k])
+  // }
+
+  values[0].push(email)
+
+  sheets.spreadsheets.values.append({
+    auth: jwtClient,
+    spreadsheetId: '1g8AnpDPnxcubKJHKHGJ0Fo-Eu_ybndV-MLmtJ_OOq6o',
+    range: 'emails',
+    valueInputOption: 'RAW',
+    insertDataOption: 'INSERT_ROWS',
+    resource: {
+      values
+    }
+  }, (err, response) => {
+    if (err) return console.error(err)
+  })
+
+}
+
 
 
 // const hbs = require('hbs');
@@ -170,7 +194,7 @@ exports.myFunctionName = functions.firestore
     .document('users/{userId}')
     .onCreate((snap, context) => {
       const {originalEmail, displayName} = snap.data()
-      accountCreatedMail(originalEmail, displayName)
+      //accountCreatedMail(originalEmail, displayName)
     });
 
 exports.datosCompletados = functions.firestore
@@ -242,10 +266,10 @@ exports.activateAccount = functions.https.onRequest((req, res) => {
             console.log("llegué")
             res.status(200).send(` <h2>Cuenta activada</h2>
             <p>Da clic <a href="https://learning.ironhack.com.mx/profile">AQUÍ</a> para ver el curso</p>
-            <h5>Serás redireccionad@ en <h2 id="sec">10</h2> Segundos</h5>
+            <h5>Serás redireccionad@ en <h2 id="sec">1</h2> Segundo</h5>
             <script>
             var sec = document.getElementById('sec')
-            var counter = 10
+            var counter = 1
             setInterval(()=>{
                 counter--
                 sec.innerHTML = counter
@@ -275,6 +299,7 @@ exports.examApproved = functions.https.onRequest((req,res)=>{
         const user = doc.data()
         if(!user.approved) return res.status(404).send({message:"Este usuario No ha aprovado el examen"})
         writeInApproved(user)
+        siPaso(user.email, user.displayName)
         cors(req, res, () => {
             return res.status(201).send({message:"Escribiendo"})
           })
@@ -291,12 +316,21 @@ exports.examNotApproved = functions.https.onRequest((req,res)=>{
         const user = doc.data()
         if(user.approved) return res.status(404).send({message:"Este usuario ya ha aprovado el examen"})
         writeInNotApproved(user)
+        noPaso(user.email, user.displayName)
         cors(req, res, () => {
             return res.status(201).send({message:"Escribiendo"})
           })
        
     })
 })
+
+//coming soon
+exports.comingSoon = functions.https.onRequest((req, res) => {
+  writeEmail(req.query.email)
+  cors(req, res, () => {
+    res.status(200).send({message: 'Writing'});
+  })
+});
 
 //nodemailer
 
@@ -327,7 +361,7 @@ const accountCreatedMail = (to,name)=>{
         `
       }, (e, i)=>console.log("callback: " + JSON.stringify(i),e))
       //.then(info => res.render('message', {email, subject, message, info}))
-}
+};
 
 const accountCompletedMail = (to,name)=>{
     return transporter.sendMail({
@@ -359,11 +393,19 @@ const middleCourseMail = (to,name)=>{
         //html: accountCreated({name})
 
         html: `
-        <h2>${name}, ¡Casi lo logras!</h2>
+        <h2>Hola ${name}, ¡Te tengo buenas noticias!</h2>
         <p>
-            Estas a nada de terminar el curso y poder aplicar al examen, hasta ahora lo
-            haz hecho fenomenal, ¡no te detengas! continua y terminalo de una vez =D
-            <a href="https://learning.ironhack.com.mx/course/0/animaciones-css"> Ir al curso  </a>  </p>
+            ¡Ya completaste la mitad del curso en línea!
+            ¿Vas a parar aquí?
+
+            Sigue aprendiendo a crear animaciones con nuestro instructor Héctor Bliss.
+            ¡Aquí te esperamos! 
+
+            <a href="https://learning.ironhack.com.mx/course/0/animaciones-css"> Ir al curso  </a> 
+            
+            ¡Ánimo! Manon de Ironhack
+            </p>
+           
         `
       }, (e, i)=>console.log("callback: " + JSON.stringify(i),e))
       //.then(info => res.render('message', {email, subject, message, info}))
@@ -378,10 +420,16 @@ const finalizeCourse = (to,name)=>{
         //html: accountCreated({name})
 
         html: `
-        <h2>${name}, ¡Lo conseguiste!, ¿no estás feliz?</h2>
+        <h2>Hola ${name}, ¡Muchas felicidades!</h2>
         <p>
-            Debes estarlo, ¡haz concluido todo el curso!, queremos felicitate y recorarte que ahora puedes
-            presenta el examen, y conseguir tu certificado, ¡hazlo ahora mismo!
+            Acabas de completar nuestro curso en línea de animaciones!
+
+            Llegó la hora de aplicar lo que aprendiste y de pasar el examen para obtener tu certificado.
+
+            ¡No pierdas tiempo y prueba tus conocimientos ahora!
+
+            ¡Ánimo!
+            Manon de Ironhack
             <a href="https://learning.ironhack.com.mx/course/0/animaciones-css"> Ir al examen  </a>  </p>
         `
       }, (e, i)=>console.log("callback: " + JSON.stringify(i),e))
@@ -398,12 +446,77 @@ const sendConfirmationEmail = (to,name, id)=>{
         //html: accountCreated({name})
 
         html: `
-        <h2>${name}, ¡Solo falta una cosa más!</h2>
+        <h2>Hola ${name}, ¡Muchas felicidades!</h2>
         <p>
-            Estas a punto de disfrutar de el curso totalmente gratis, solo nos hace falta que des clic en el siguiente enlace,
-            y podrás ver el curso en tu perfil:
-            <a href="https://us-central1-cursosonline-4b11c.cloudfunctions.net/activateAccount?id=${id}"> Activar cuenta  </a>  </p>
+            Aprobaste el examén y ya puedes crear animaciones con CSS, HTML y JavaScript!  
+            Encontrarás aquí tu certificado para poder compartilo en redes y Linkedin.
+
+
+            ¿Quieres ir más allá y seguir aprendiendo? Estarías interesado en impulsar o cambiar completamente de carrera?
+            Te invitamos a conocernos y venir a unos de nuestros Openhouse para conocer al equipo, el campus y resolver todas tus dudas.
+            Además podrás venir a recuperar tu premio durante esta sesión de puertas abiertas.
+            Tenemos varias sesiones disponibles, regístrate aquí:
+            ¡Espero verte dentro de poco!
+
+            Saludos
+            Manon de Ironhack
         `
       }, (e, i)=>console.log("callback: " + JSON.stringify(i),e))
       //.then(info => res.render('message', {email, subject, message, info}))
+}
+
+const noPaso = (to,name)=>{
+//  console.log("el id: ", id)
+  return transporter.sendMail({
+    from: '"IronhackMEX 💻" <hola@ironhack.com>',
+    to,
+    subject: name + " ¡Estas a 1 solo paso!",
+    //text:"testing, " + name,
+    //html: accountCreated({name})
+
+    html: `
+        <h2>Hola ${name}, ¡No te rindas!</h2>
+        <p>
+            Te falta aplicar unos conceptos para crear tus animaciones por tu cuenta y pasar el examén.
+
+            Pero no te preocupes, aprender a programar solo requiere dedicación y tiempo.Te invitamos a volver a tomar el curso para pasar el examén y
+            obtener tu certificado.
+
+            Si crees que el aprendizaje en línea no sea para tí y estás interesado en unos de nuestros cursos presenciales, ven a unos de nuestros Openhouse
+            para conocer al equipo, el campus y resolver todas tus dudas.
+            Tenemos varias sesiones disponibles, regístrate aquí:
+            
+            ¡Espero verte dentro de poco!
+            Manon de Ironhack
+        `
+  }, (e, i)=>console.log("callback: " + JSON.stringify(i),e))
+  //.then(info => res.render('message', {email, subject, message, info}))
+}
+
+const siPaso = (to,name)=>{
+  return transporter.sendMail({
+    from: '"IronhackMEX 💻" <hola@ironhack.com>',
+    to,
+    subject: name + " ¡Estas a 1 solo paso!",
+    //text:"testing, " + name,
+    //html: accountCreated({name})
+
+    html: `
+        <h2>Hola ${name}, </h2>
+        <p>
+            Gracias por registrarte a nuestro curso en línea de Diseño Web, ¡ya formas parte de nuestra comunidad!
+            En este curso de 2 horas aprenderás a crear animaciones CSS 2D, 3D y SVG y diseñar proyectos con efectos espectaculares. Te recomendamos tomar
+            las lecciones con regularidad para que aprendas de manera eficiente.
+            Todos esos temas se abordan a profundidad en nuestros cursos de Desarrollo Web y UX/UI Design en Ironhack, en caso de que quieras aprender más.
+
+            ¿Listo/lista? Empieza ahora: botón
+
+            ¡Ánimo!
+            Manon de Ironhack
+
+            Para acceder al curso totalmente gratis, solo nos hace falta que des click en el siguiente enlace, y podrás ver el curso en tu perfil:
+            <a href="https://us-central1-cursosonline-4b11c.cloudfunctions.net/activateAccount?id=${id}"> Activar cuenta  </a>  </p> 
+        `
+  }, (e, i)=>console.log("callback: " + JSON.stringify(i),e))
+  //.then(info => res.render('message', {email, subject, message, info}))
 }

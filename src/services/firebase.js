@@ -171,6 +171,23 @@ export const examNotApproved = (userId) => {
   .then(message=>message)
 }
 
+export const writeEmail = (email) => {
+  // const data = {
+  //   email,
+  //   displayName
+  // }
+  //console.log(data)
+  return fetch(`https://us-central1-cursosonline-4b11c.cloudfunctions.net/comingSoon?email=${email}`,{
+    method:"post",
+    //body:JSON.stringify(data),
+    headers:{
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(res=>res.json())
+    .then(message=>message)
+}
+
 //coming soon
 export const saveEmail = (email) => {
   return db.collection('emails').doc(email).set({email})
