@@ -1,0 +1,216 @@
+/* CONTAINER OF THE WHOLE PAGE */
+.containerPage {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+}
+.containerPage h1 {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: "Gotham titles";
+}
+.containerPage h2 {
+    color: white;
+    font-family: "Gotham subtitles";
+    line-height: 1.5em;
+}
+.containerPage h3 {
+    color: #2DC5FA;
+    font-family: "Gotham titles";
+    font-size: 1.9rem;
+}
+.containerPage h4 {
+    color: black;
+    font-family: "Gotham subtitles";
+    font-size: 1.4rem;
+}
+.containerPage h5, h6 { font-size: 1.1rem; }
+/* CONTAINER OF THE WHOLE PAGE */
+
+/* HEADER */
+.header {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    height: 80px;
+    width: 100vw;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 3px 3px 3px rgba(136,136,136, 0.5);
+}
+.header Button {
+    margin: 120px;
+}
+.logoanchor > img {
+    margin: 120px;
+    width: 25%;
+}
+.logoanchor {
+    width: 20%;
+}
+/* HEADER */
+
+/* FIRST PAGE */
+.titleSection {
+    width: 100vw;
+    margin-top: 80px;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-image: url("../../assets/background.jpg");
+}
+.titleSection > img {
+    width: 8%;
+}
+.titleSection div {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    margin-top: 15px;
+}
+.titleSection > * {
+    margin-bottom: 55px;
+}
+.titleSection span {
+    color: white;
+    font-size: 1.2rem;
+}
+.titleSection Button {
+    margin-top: 15px;
+    height: 50px;
+}
+/* FIRST PAGE */
+
+/* WHYTHISCOURSE PAGE */
+.whythiscourse {
+    width: 80vw;
+    padding: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: justify;
+}
+/* WHYTHISCOURSE PAGE */
+
+/* POINTS PAGE */
+.descCourse {
+    width: 100vw;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.desc-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+.points > h5 {
+    text-align: justify;
+}
+/* POINTS PAGE */
+
+/* BLISS PAGE */
+.instructor {
+    width: 90vw;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: justify;
+}
+.instructor img {
+    width: 20%;
+    border-radius: 50%;
+}
+.instructor > * {
+    margin-bottom: 55px;
+}
+/* BLISS PAGE */
+
+/* IRONHACK PAGE */
+.aboutIronhack {
+    width: 90vw;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: justify;
+}
+.aboutIronhack > * {
+    margin-bottom: 55px;
+}
+.aboutIronhack video {
+    width: 600px;
+    height: 315px;
+}
+/* IRONHACK PAGE */
+
+/* FOOTER */
+.footer h4 {
+    color: white;
+}
+.footer {
+    width: 100vw;
+    text-align: left !important;
+    padding: 2% 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    background-color: #2D354C;;
+    flex-wrap: wrap;
+    color: #2DC5FA;
+}
+.footer > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 25%;
+    text-align: center;
+}
+.footer div div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.footer div:nth-child(1) div {
+    margin-top: 20px;
+    flex-direction: row;
+}
+.footer a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.icon {
+    font-size: 1.5rem;
+}
+.footer a:hover {
+    text-decoration: none;
+    color: #2DC5FA;
+    cursor: pointer;
+}
+/* FOOTER */

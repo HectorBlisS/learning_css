@@ -880,15 +880,15 @@
     .shadow { height: 100vh; }
 }
 
-@media (max-height: 738px) {
+/* @media (max-height: 738px) {
     .fifth-section { margin-top: 30px; height: 140vh; }
     .fourth-section { height: 160vh;}
     .third-section { height: 240vh; }
     .second-section { height: 80vh; }
     .shadow { height: 100vh; }
-}
+} */
 
-@media (min-height: 860px) {
+/* @media (min-height: 860px) {
     .fifth-section { margin: 80px; height: 140vh; }
     .fourth-section { height: 160vh;}
     .third-section { height: 240vh; }
@@ -902,4 +902,4 @@
     .third-section { height: 280vh; }
     .second-section { height: 100vh; }
     .shadow { height: 120vh; }
-}
+} */

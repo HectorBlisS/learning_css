@@ -180,7 +180,7 @@ class HomePage extends Component {
               <h3 className='h3-diuri'>El Instructor</h3>
               <img className='bliss' src={bliss} alt="Bliss"/>
               <h4 className='h4-diuri'>Héctor Bliss</h4>
-              <h5 className='h6-diuri'>
+              <h5 className='h5-diuri'>
                 <strong>Bliss</strong>, es un desarrollador obsesionado con aprender cómo funciona la tecnología y herramientas que usan empresas de gran tamaño como <i>Google</i>, <i>Uber</i>, <i>Airbnb</i> o <i>Facebook</i>. Si no está aprendiendo un tema nuevo lo puedes encontrar compartiendo y enseñando en comunidad de forma
                 gratuita. <strong>Con más de 6 años enseñando tecnología Bliss comparte tanto en los grupos oficiales de Google para desarrolladores como en el
                 ecosistema emprendedor de México ayudando a emprendedores a aterrizar sus ideas tecnológicas</strong>. Héctor es el fundador de la comunidad
