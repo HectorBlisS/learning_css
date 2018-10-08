@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './styles.css';
 import {Header} from "./Header";
-import firebase, {facebookLogin, googleLogin, redirectedUser, saveEmail} from "../../services/firebase";
+import firebase, {facebookLogin, googleLogin, redirectedUser, saveEmail, writeEmail} from "../../services/firebase";
 import swal from "sweetalert";
 import {Title} from "./Title";
 import {WhyThisCourse} from "./WhyThisCourse";
@@ -46,6 +46,7 @@ class HomeContainer extends Component{
         .then(()=>{
           this.setState({visible:false});
           swal("¡Gracias!", "Nos pondremos en contacto contigo cuando lancemos el curso.", "success");
+          writeEmail(email)
         })
         .catch(e=>{
           this.setState({visible:false});
