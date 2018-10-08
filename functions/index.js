@@ -446,20 +446,21 @@ const sendConfirmationEmail = (to,name, id)=>{
         //html: accountCreated({name})
 
         html: `
-        <h2>Hola ${name}, ¡Muchas felicidades!</h2>
-        <p>
-            Aprobaste el examén y ya puedes crear animaciones con CSS, HTML y JavaScript!  
-            Encontrarás aquí tu certificado para poder compartilo en redes y Linkedin.
+            <h2>Hola ${name}, </h2>
+            <p>
+            Gracias por registrarte a nuestro curso en línea de Diseño Web, ¡ya formas parte de nuestra comunidad!
+            En este curso de 2 horas aprenderás a crear animaciones CSS 2D, 3D y SVG y diseñar proyectos con efectos espectaculares. Te recomendamos tomar
+            las lecciones con regularidad para que aprendas de manera eficiente.
+            Todos esos temas se abordan a profundidad en nuestros cursos de Desarrollo Web y UX/UI Design en Ironhack, en caso de que quieras aprender más.
 
+            ¿Listo/lista? Empieza ahora: botón
 
-            ¿Quieres ir más allá y seguir aprendiendo? Estarías interesado en impulsar o cambiar completamente de carrera?
-            Te invitamos a conocernos y venir a unos de nuestros Openhouse para conocer al equipo, el campus y resolver todas tus dudas.
-            Además podrás venir a recuperar tu premio durante esta sesión de puertas abiertas.
-            Tenemos varias sesiones disponibles, regístrate aquí:
-            ¡Espero verte dentro de poco!
-
-            Saludos
+            ¡Ánimo!
             Manon de Ironhack
+
+            Para acceder al curso totalmente gratis, solo nos hace falta que des click en el siguiente enlace, y podrás ver el curso en tu perfil:
+            
+            <a href="https://us-central1-cursosonline-4b11c.cloudfunctions.net/activateAccount?id=${id}"> Activar cuenta  </a>  </p>
         `
       }, (e, i)=>console.log("callback: " + JSON.stringify(i),e))
       //.then(info => res.render('message', {email, subject, message, info}))
@@ -502,20 +503,20 @@ const siPaso = (to,name)=>{
     //html: accountCreated({name})
 
     html: `
-        <h2>Hola ${name}, </h2>
+        <h2>Hola ${name}, ¡Muchas felicidades!</h2>
         <p>
-            Gracias por registrarte a nuestro curso en línea de Diseño Web, ¡ya formas parte de nuestra comunidad!
-            En este curso de 2 horas aprenderás a crear animaciones CSS 2D, 3D y SVG y diseñar proyectos con efectos espectaculares. Te recomendamos tomar
-            las lecciones con regularidad para que aprendas de manera eficiente.
-            Todos esos temas se abordan a profundidad en nuestros cursos de Desarrollo Web y UX/UI Design en Ironhack, en caso de que quieras aprender más.
+            ¡Aprobaste el examén y ya puedes crear animaciones con CSS, HTML y JavaScript!  
+            Encontrarás aquí tu certificado para poder compartilo en redes y Linkedin.
 
-            ¿Listo/lista? Empieza ahora: botón
+            ¿Quieres ir más allá y seguir aprendiendo? Estarías interesado en impulsar o cambiar completamente de carrera?
+            Te invitamos a conocernos y venir a unos de nuestros Openhouse para conocer al equipo, el campus y resolver todas tus dudas.
+            Además podrás venir a recuperar tu premio durante esta sesión de puertas abiertas.
+            Tenemos varias sesiones disponibles, regístrate aquí:
+            ¡Espero verte dentro de poco!
 
-            ¡Ánimo!
+            Saludos
             Manon de Ironhack
-
-            Para acceder al curso totalmente gratis, solo nos hace falta que des click en el siguiente enlace, y podrás ver el curso en tu perfil:
-            <a href="https://us-central1-cursosonline-4b11c.cloudfunctions.net/activateAccount?id=${id}"> Activar cuenta  </a>  </p> 
+        </p> 
         `
   }, (e, i)=>console.log("callback: " + JSON.stringify(i),e))
   //.then(info => res.render('message', {email, subject, message, info}))
