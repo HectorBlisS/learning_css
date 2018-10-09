@@ -14,7 +14,7 @@ import {LoginModal} from "../home/Modal";
 class HomeContainer extends Component{
 
   state = {
-    visible: false,
+    visible: true,
     loading:true,
     email:null,
     error:false
@@ -80,17 +80,23 @@ class HomeContainer extends Component{
   };
 
   render() {
-    const {visible, loading} = this.state;
+    const {visible, loading, error} = this.state;
     return (
       <div className='containerPage'>
         {/* <Header handleShow={this.handleShow} loading={loading}/> */}
-        <Title handleShow={this.handleShow} loading={loading}/>
+        <Title 
+        error={error}
+        visible={visible}
+        handleSubmit={this.handleSubmit} 
+        onChange={this.onEmailChange}
+        email={this.state.email}
+        loading={loading}/>
         <WhyThisCourse/>
         <DescriptionCourse/>
         <Instructor/>
         <AboutIronhack/>
         <Footer/>
-        <LoginModal onEmailChange={this.onEmailChange}
+        {/* <LoginModal onEmailChange={this.onEmailChange}
                     email={this.state.email}
                     error={this.state.error}
                     visible={visible}
@@ -98,7 +104,7 @@ class HomeContainer extends Component{
                     handleCancel={this.handleCancel}
                     facebookLogin={this.loginWithFacebook}
                     googleLogin={this.loginWithGoogle}
-        />
+        /> */}
       </div>
     )
   }
