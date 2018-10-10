@@ -1,5 +1,7 @@
 import React from 'react';
 
+const video = "https://firebasestorage.googleapis.com/v0/b/cursosonline-4b11c.appspot.com/o/landing%2FDiscover_Ironhack_Mexico_City(youtube.com).mp4?alt=media&token=499adeda-05b2-4f92-a1c3-9fa569731832"
+
 export const AboutIronhack = () => {
   return (
     <div className='aboutIronhack'>
@@ -15,7 +17,7 @@ export const AboutIronhack = () => {
         los estudiantes encuentran empleo en los tres meses siguiente
         a su formación.</strong>
       </h5>
-      <video controls controlsList="nodownload" src='https://firebasestorage.googleapis.com/v0/b/landingpagecss.appspot.com/o/Discover_Ironhack_Mexico_City(youtube.com).mp4?alt=media&token=9d44d1b7-d7a1-4e23-8053-20beccce749d'></video>
+      <video controls controlsList="nodownload" src={video}></video>
     </div>
   )
 };

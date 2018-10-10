@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './styles.css';
-import {Header} from "./Header";
+//import {Header} from "./Header";
 import firebase, {facebookLogin, googleLogin, redirectedUser, saveEmail, writeEmail} from "../../services/firebase";
 import swal from "sweetalert";
 import {Title} from "./Title";
@@ -9,7 +9,7 @@ import {DescriptionCourse} from "./DescriptionCourse";
 import {Instructor} from "./Instructor";
 import {AboutIronhack} from "./AboutIronhack";
 import {Footer} from "./Footer";
-import {LoginModal} from "../home/Modal";
+//import {LoginModal} from "../home/Modal";
 
 class HomeContainer extends Component{
 
