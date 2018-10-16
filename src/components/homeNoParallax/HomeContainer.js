@@ -10,6 +10,7 @@ import {Instructor} from "./Instructor";
 import {AboutIronhack} from "./AboutIronhack";
 import {Footer} from "./Footer";
 //import {LoginModal} from "../home/Modal";
+import { Button } from 'antd';
 
 class HomeContainer extends Component{
 
@@ -105,6 +106,7 @@ class HomeContainer extends Component{
                     facebookLogin={this.loginWithFacebook}
                     googleLogin={this.loginWithGoogle}
         /> */}
+        <button style={{display:"none"}} onClick={this.loginWithGoogle} >Login</button>
       </div>
     )
   }
